@@ -11,6 +11,14 @@ const copy = {
     actionSectionTitle: "Waar wil je mee starten?",
     componentSectionTitle: "De 8 componenten van inclusief organiseren",
     guidedFlowTitle: "Zo helpt Allora je op weg",
+    hotspotEventTitle: "Maak je event",
+    hotspotEventText: "Start met een naam, eventvorm en prioriteiten. Daarna bouw je verder aan je draaiboek.",
+    hotspotCheckTitle: "Check je keuzes",
+    hotspotCheckText: "Duid per inclusiethema aan wat al voorzien is en waar je nog op wil inzetten.",
+    hotspotCasesTitle: "Leer uit cases",
+    hotspotCasesText: "Bekijk echte eventvoorbeelden en vertaal sterke keuzes naar je eigen organisatie.",
+    hotspotPlanTitle: "Download je plan",
+    hotspotPlanText: "Neem je ingevulde draaiboek, checklist en acties mee als bruikbaar document.",
     themeDetailTitle: "Wat houdt dit thema in?",
     themeWhyTitle: "Waarom is dit belangrijk?",
     themeChecklistTitle: "Waar let je op?",
@@ -129,6 +137,14 @@ const copy = {
     actionSectionTitle: "Where do you want to start?",
     componentSectionTitle: "The 8 components of inclusive organising",
     guidedFlowTitle: "How Allora guides you",
+    hotspotEventTitle: "Create your event",
+    hotspotEventText: "Start with a name, event type and priorities. Then build your runbook step by step.",
+    hotspotCheckTitle: "Check your choices",
+    hotspotCheckText: "Tick what is already covered per inclusion theme and what still needs attention.",
+    hotspotCasesTitle: "Learn from cases",
+    hotspotCasesText: "Explore real event examples and translate strong choices to your own organisation.",
+    hotspotPlanTitle: "Download your plan",
+    hotspotPlanText: "Take your runbook, checklist and actions with you as a practical document.",
     themeDetailTitle: "What does this theme include?",
     themeWhyTitle: "Why does this matter?",
     themeChecklistTitle: "What do you check?",
@@ -247,6 +263,14 @@ const copy = {
     actionSectionTitle: "Par ou commencer?",
     componentSectionTitle: "Les 8 composantes de l'organisation inclusive",
     guidedFlowTitle: "Comment Allora vous guide",
+    hotspotEventTitle: "Creer votre event",
+    hotspotEventText: "Commencez avec un nom, un type d'event et des priorites. Ensuite, construisez votre deroule pas a pas.",
+    hotspotCheckTitle: "Verifier vos choix",
+    hotspotCheckText: "Cochez ce qui est deja prevu par theme d'inclusion et ce qui demande encore attention.",
+    hotspotCasesTitle: "Apprendre des cases",
+    hotspotCasesText: "Explorez des exemples reels et traduisez les bons choix vers votre propre organisation.",
+    hotspotPlanTitle: "Telecharger votre plan",
+    hotspotPlanText: "Emportez votre deroule, checklist et actions dans un document pratique.",
     themeDetailTitle: "Que comprend ce theme?",
     themeWhyTitle: "Pourquoi est-ce important?",
     themeChecklistTitle: "A verifier",
@@ -2148,6 +2172,23 @@ document.querySelectorAll("[data-tab]").forEach((button) => {
   button.addEventListener("click", (event) => {
     event.preventDefault();
     activateTab(button.dataset.tab);
+  });
+});
+
+document.addEventListener("click", (event) => {
+  const hotspot = event.target.closest(".hero-hotspot");
+  document.querySelectorAll(".hero-hotspot").forEach((button) => {
+    const shouldOpen = button === hotspot && !button.classList.contains("is-open");
+    button.classList.toggle("is-open", shouldOpen);
+    button.setAttribute("aria-expanded", String(shouldOpen));
+  });
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key !== "Escape") return;
+  document.querySelectorAll(".hero-hotspot.is-open").forEach((button) => {
+    button.classList.remove("is-open");
+    button.setAttribute("aria-expanded", "false");
   });
 });
 

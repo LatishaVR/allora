@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Allora</title>
-    <link rel="stylesheet" href="styles.css?v=api-fallback" />
+    <link rel="stylesheet" href="styles.css?v=homepage-popups-2" />
   </head>
   <body>
     <header class="site-header">
@@ -47,9 +47,41 @@
             <p class="hero-proof" data-i18n="heroProof">Snel duidelijk, meteen bruikbaar.</p>
           </div>
 
-          <aside class="visual-panel">
-            <div class="hero-visual" aria-hidden="true">
+          <aside class="visual-panel" aria-label="Wat kan je doen met Allora?">
+            <div class="hero-visual">
               <img class="hero-logo-slogan" src="allora-logo-slogan.png" alt="" />
+              <button class="hero-hotspot hotspot-event" type="button" aria-expanded="false">
+                <span class="hotspot-dot" aria-hidden="true"></span>
+                <span class="hotspot-label" data-i18n="hotspotEventTitle">Maak je event</span>
+                <span class="hotspot-popup">
+                  <strong data-i18n="hotspotEventTitle">Maak je event</strong>
+                  <span data-i18n="hotspotEventText">Start met een naam, eventvorm en prioriteiten. Daarna bouw je verder aan je draaiboek.</span>
+                </span>
+              </button>
+              <button class="hero-hotspot hotspot-check" type="button" aria-expanded="false">
+                <span class="hotspot-dot" aria-hidden="true"></span>
+                <span class="hotspot-label" data-i18n="hotspotCheckTitle">Check je keuzes</span>
+                <span class="hotspot-popup">
+                  <strong data-i18n="hotspotCheckTitle">Check je keuzes</strong>
+                  <span data-i18n="hotspotCheckText">Duid per inclusiethema aan wat al voorzien is en waar je nog op wil inzetten.</span>
+                </span>
+              </button>
+              <button class="hero-hotspot hotspot-cases" type="button" aria-expanded="false">
+                <span class="hotspot-dot" aria-hidden="true"></span>
+                <span class="hotspot-label" data-i18n="hotspotCasesTitle">Leer uit cases</span>
+                <span class="hotspot-popup">
+                  <strong data-i18n="hotspotCasesTitle">Leer uit cases</strong>
+                  <span data-i18n="hotspotCasesText">Bekijk echte eventvoorbeelden en vertaal sterke keuzes naar je eigen organisatie.</span>
+                </span>
+              </button>
+              <button class="hero-hotspot hotspot-plan" type="button" aria-expanded="false">
+                <span class="hotspot-dot" aria-hidden="true"></span>
+                <span class="hotspot-label" data-i18n="hotspotPlanTitle">Download je plan</span>
+                <span class="hotspot-popup">
+                  <strong data-i18n="hotspotPlanTitle">Download je plan</strong>
+                  <span data-i18n="hotspotPlanText">Neem je ingevulde draaiboek, checklist en acties mee als bruikbaar document.</span>
+                </span>
+              </button>
             </div>
           </aside>
         </section>
@@ -227,6 +259,6 @@
     </div>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
-    <script src="script.js?v=api-fallback"></script>
+    <script src="script.js?v=homepage-popups-2"></script>
   </body>
 </html>
