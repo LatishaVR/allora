@@ -6,10 +6,11 @@ const copy = {
     heroLineTwo: "toegankelijker, veiliger",
     heroLineThree: "en inclusiever.",
     heroLead: "",
-    heroText: "Een digitale toolkit voor organisatoren die inclusie willen meenemen in hun eventplanning. Met checks, cases en een invulbaar draaiboek ga je van een eerste idee naar een concreet plan.",
-    heroProof: "Verken. Check. Plan.",
-    actionSectionTitle: "Werk verder zoals in de gids",
+    heroText: "Geen ervaring nodig. Beantwoord enkele eenvoudige vragen, kies je prioriteiten en bouw stap voor stap een event dat duidelijker, veiliger en welkomer voelt.",
+    heroProof: "Allora helpt je vooruit, zonder je event te beoordelen.",
+    actionSectionTitle: "Waar wil je mee starten?",
     componentSectionTitle: "De 8 componenten van inclusief organiseren",
+    guidedFlowTitle: "Zo helpt Allora je op weg",
     themeDetailTitle: "Wat houdt dit thema in?",
     themeWhyTitle: "Waarom is dit belangrijk?",
     themeChecklistTitle: "Waar let je op?",
@@ -40,25 +41,25 @@ const copy = {
     learnTitle: "Klik een thema open en leer wat je kan toepassen",
     checkEyebrow: "Eventcheck",
     checkTitle: "Duid je checklist per thema aan",
-    downloadChecklist: "Download checklist",
+    downloadChecklist: "Download mijn checklist",
     resetCheck: "Reset",
     casesEyebrow: "Real life cases",
     casesTitle: "Leer van echte eventvoorbeelden",
     practiceEyebrow: "Case Closed",
-    practiceTitle: "Oefen met situaties die kunnen schuren",
+    practiceTitle: "Oefen met herkenbare situaties uit echte events",
     methodTitle: "De 5 A's",
     toolkitEyebrow: "Draaiboek",
     toolkitTitle: "Vul je draaiboek in",
     optionalDownloadNote: "Vul alleen in wat relevant is voor jouw event. Lege onderdelen komen niet mee in je download.",
     planEyebrow: "Inclusieplan",
-    planTitle: "Zet je inzichten om in acties",
-    copyPlan: "Kopieer plan",
+    planTitle: "Zet je keuzes om in concrete acties",
+    copyPlan: "Kopieer mijn actieplan",
     eventEyebrow: "Mijn evenement",
-    eventTitle: "Bouw je draaiboek en inclusieplan",
+    eventTitle: "Maak je event stap voor stap inclusiever",
     eventSwitcherEyebrow: "Event kiezen",
-    eventSwitcherTitle: "Werk aan één event tegelijk",
+    eventSwitcherTitle: "Start met één event. Allora helpt je stap voor stap verder.",
     eventSetupTitle: "Geef je event eerst een naam",
-    eventSetupHint: "Daarna kan je je draaiboek invullen, checklists aanduiden en je voorbereiding downloaden.",
+    eventSetupHint: "Daarna kies je je eventvorm, prioriteiten en acties. Je hoeft niet alles tegelijk te weten.",
     eventSelectLabel: "Kies event",
     createEvent: "Nieuw event",
     deleteEvent: "Verwijder event",
@@ -83,7 +84,7 @@ const copy = {
     addToEvent: "Voeg toe aan mijn event",
     actionAdded: "Actie toegevoegd aan je event.",
     saveEvent: "Bewaar event",
-    downloadRunbook: "Download draaiboek",
+    downloadRunbook: "Download mijn draaiboek",
     eventProgressLabel: "Voortgang checklists",
     profileSaved: "Eventprofiel bewaard.",
     profileEmpty: "Nog geen profiel aangemaakt.",
@@ -96,6 +97,7 @@ const copy = {
     accountEmail: "E-mail",
     accountPassword: "Wachtwoord",
     accountRequired: "Log in om je event te bewaren.",
+    backendUnavailable: "Accounts werken pas wanneer de online database gekoppeld is.",
     addRow: "Rij toevoegen",
     removeRow: "Verwijder",
     more: "Meer info",
@@ -122,10 +124,11 @@ const copy = {
     heroLineTwo: "more accessible, safer",
     heroLineThree: "and more inclusive.",
     heroLead: "",
-    heroText: "A digital toolkit for organisers who want to include inclusion in their event planning, with checks, cases and a fill-in runbook.",
-    heroProof: "Explore. Check. Plan.",
-    actionSectionTitle: "Continue like in the guide",
+    heroText: "No experience needed. Answer a few simple questions, choose your priorities and build an event that feels clearer, safer and more welcoming.",
+    heroProof: "Allora helps you move forward without judging your event.",
+    actionSectionTitle: "Where do you want to start?",
     componentSectionTitle: "The 8 components of inclusive organising",
+    guidedFlowTitle: "How Allora guides you",
     themeDetailTitle: "What does this theme include?",
     themeWhyTitle: "Why does this matter?",
     themeChecklistTitle: "What do you check?",
@@ -156,25 +159,25 @@ const copy = {
     learnTitle: "Inclusive events start with small choices",
     checkEyebrow: "Event check",
     checkTitle: "Check your event by theme",
-    downloadChecklist: "Download checklist",
+    downloadChecklist: "Download my checklist",
     resetCheck: "Reset",
     casesEyebrow: "Inspiration cards",
     casesTitle: "Learn from recognisable events",
     practiceEyebrow: "Case Closed",
-    practiceTitle: "Practise moments that may feel uncomfortable",
+    practiceTitle: "Practise recognisable situations from real events",
     methodTitle: "The 5 A's",
     toolkitEyebrow: "Downloads",
     toolkitTitle: "Templates and guide",
     optionalDownloadNote: "Only fill in what is relevant for your event. Empty parts will not appear in your download.",
     planEyebrow: "Fill in",
-    planTitle: "Create your inclusion plan",
-    copyPlan: "Copy plan",
+    planTitle: "Turn your choices into concrete actions",
+    copyPlan: "Copy my action plan",
     eventEyebrow: "Profile",
-    eventTitle: "Track your event",
+    eventTitle: "Make your event more inclusive step by step",
     eventSwitcherEyebrow: "Choose event",
-    eventSwitcherTitle: "Work on one event at a time",
+    eventSwitcherTitle: "Start with one event. Allora guides you step by step.",
     eventSetupTitle: "Name your event first",
-    eventSetupHint: "After that you can complete your runbook, tick checklists and download your preparation.",
+    eventSetupHint: "Then choose your event type, priorities and actions. You do not need to know everything at once.",
     eventSelectLabel: "Choose event",
     createEvent: "New event",
     deleteEvent: "Delete event",
@@ -199,7 +202,7 @@ const copy = {
     addToEvent: "Add to my event",
     actionAdded: "Action added to your event.",
     saveEvent: "Save profile",
-    downloadRunbook: "Download runbook",
+    downloadRunbook: "Download my runbook",
     eventProgressLabel: "Progress",
     profileSaved: "Event profile saved.",
     profileEmpty: "No profile yet.",
@@ -212,6 +215,7 @@ const copy = {
     accountEmail: "Email",
     accountPassword: "Password",
     accountRequired: "Log in to save your event.",
+    backendUnavailable: "Accounts will work once the online database is connected.",
     addRow: "Add row",
     removeRow: "Remove",
     more: "More info",
@@ -238,10 +242,11 @@ const copy = {
     heroLineTwo: "plus accessible, plus sur",
     heroLineThree: "et plus inclusif.",
     heroLead: "",
-    heroText: "Une boite a outils numerique pour integrer l'inclusion dans la preparation de votre evenement, avec des checks, des cas et un deroule a completer.",
-    heroProof: "Explorer. Checker. Planifier.",
-    actionSectionTitle: "Continuer comme dans le guide",
+    heroText: "Aucune experience necessaire. Repondez a quelques questions simples, choisissez vos priorites et construisez un event plus clair, plus sur et plus accueillant.",
+    heroProof: "Allora vous aide a avancer sans juger votre event.",
+    actionSectionTitle: "Par ou commencer?",
     componentSectionTitle: "Les 8 composantes de l'organisation inclusive",
+    guidedFlowTitle: "Comment Allora vous guide",
     themeDetailTitle: "Que comprend ce theme?",
     themeWhyTitle: "Pourquoi est-ce important?",
     themeChecklistTitle: "A verifier",
@@ -272,25 +277,25 @@ const copy = {
     learnTitle: "Un evenement inclusif commence par de petits choix",
     checkEyebrow: "Check event",
     checkTitle: "Verifiez votre evenement par theme",
-    downloadChecklist: "Telecharger la checklist",
+    downloadChecklist: "Telecharger ma checklist",
     resetCheck: "Reinitialiser",
     casesEyebrow: "Cartes d'inspiration",
     casesTitle: "Apprendre d'evenements connus",
     practiceEyebrow: "Case Closed",
-    practiceTitle: "S'entrainer avec des situations sensibles",
+    practiceTitle: "S'entrainer avec des situations reelles reconnaissables",
     methodTitle: "Les 5 A",
     toolkitEyebrow: "Telechargements",
     toolkitTitle: "Templates et guide",
     optionalDownloadNote: "Remplissez uniquement ce qui est pertinent pour votre event. Les parties vides ne seront pas dans le telechargement.",
     planEyebrow: "A remplir",
-    planTitle: "Creez votre plan d'inclusion",
-    copyPlan: "Copier le plan",
+    planTitle: "Transformer vos choix en actions concretes",
+    copyPlan: "Copier mon plan d'action",
     eventEyebrow: "Profil",
-    eventTitle: "Suivre votre evenement",
+    eventTitle: "Rendre votre event plus inclusif pas a pas",
     eventSwitcherEyebrow: "Choisir event",
-    eventSwitcherTitle: "Travaillez sur un event a la fois",
+    eventSwitcherTitle: "Commencez par un event. Allora vous guide pas a pas.",
     eventSetupTitle: "Nommez d'abord votre event",
-    eventSetupHint: "Ensuite, vous pouvez completer le deroule, cocher les checklists et telecharger votre preparation.",
+    eventSetupHint: "Ensuite, choisissez le type d'event, les priorites et les actions. Vous ne devez pas tout savoir tout de suite.",
     eventSelectLabel: "Choisir event",
     createEvent: "Nouvel event",
     deleteEvent: "Supprimer event",
@@ -315,7 +320,7 @@ const copy = {
     addToEvent: "Ajouter a mon event",
     actionAdded: "Action ajoutee a votre event.",
     saveEvent: "Enregistrer le profil",
-    downloadRunbook: "Telecharger le deroule",
+    downloadRunbook: "Telecharger mon deroule",
     eventProgressLabel: "Progression",
     profileSaved: "Profil enregistre.",
     profileEmpty: "Pas encore de profil.",
@@ -328,6 +333,7 @@ const copy = {
     accountEmail: "E-mail",
     accountPassword: "Mot de passe",
     accountRequired: "Connectez-vous pour enregistrer votre event.",
+    backendUnavailable: "Les comptes fonctionneront quand la base de donnees en ligne sera connectee.",
     addRow: "Ajouter une ligne",
     removeRow: "Supprimer",
     more: "Plus d'info",
@@ -352,9 +358,16 @@ const copy = {
 const content = {
   nl: {
     actions: [
-      { tab: "event", kicker: "Maak", title: "Mijn evenement", text: "Maak je eventfiche, vul je draaiboek aan, duid checklists aan en download je voorbereiding.", cta: "Werk aan mijn event" },
-      { tab: "themes", kicker: "Leer", title: "Inclusiethema's", text: "Open de themakaarten en leer wat toegankelijkheid, communicatie, veiligheid en inclusie concreet betekenen.", cta: "Bekijk thema's" },
-      { tab: "cases", kicker: "Bekijk", title: "Real life cases", text: "Leer uit echte eventvoorbeelden en neem kleine acties mee voor je eigen organisatie.", cta: "Bekijk cases" }
+      { tab: "event", kicker: "Stap 1", title: "Ik wil mijn event checken", text: "Maak je event aan, kies je prioriteiten en ontdek waar je voorbereiding al sterk staat.", cta: "Start mijn eventcheck" },
+      { tab: "event", kicker: "Stap 2", title: "Ik wil een inclusieplan maken", text: "Zet keuzes rond toegankelijkheid, communicatie en veiligheid om in concrete acties.", cta: "Maak mijn plan" },
+      { tab: "cases", kicker: "Inspiratie", title: "Ik wil voorbeelden bekijken", text: "Leer uit herkenbare real life cases en neem kleine acties mee naar je eigen event.", cta: "Bekijk voorbeelden" }
+    ],
+    routeSteps: [
+      "Maak je event aan",
+      "Kies je eventvorm en prioriteiten",
+      "Vul de checklists in",
+      "Bewaar concrete acties",
+      "Download je draaiboek"
     ],
     learn: [
       { title: "Basisprincipes inclusie", text: "Wat betekent inclusie in de praktijk?", detail: "Inclusie gaat niet alleen over wie mag komen, maar over wie echt kan deelnemen en zich welkom voelt." },
@@ -431,9 +444,16 @@ const content = {
 
 content.en = {
   actions: [
-    { tab: "event", kicker: "Make", title: "My event", text: "Create your event profile, fill in your runbook, check themes and download your preparation.", cta: "Work on my event" },
-    { tab: "themes", kicker: "Learn", title: "Inclusion themes", text: "Open the theme cards and learn what accessibility, communication, safety and inclusion mean in practice.", cta: "View themes" },
-    { tab: "cases", kicker: "Explore", title: "Real life cases", text: "Learn from real event examples and take small actions into your own organisation.", cta: "View cases" }
+    { tab: "event", kicker: "Step 1", title: "I want to check my event", text: "Create your event, choose priorities and discover where your preparation is already strong.", cta: "Start my event check" },
+    { tab: "event", kicker: "Step 2", title: "I want to make an inclusion plan", text: "Turn choices around accessibility, communication and safety into concrete actions.", cta: "Make my plan" },
+    { tab: "cases", kicker: "Inspiration", title: "I want to see examples", text: "Learn from recognisable real-life cases and bring small actions into your own event.", cta: "View examples" }
+  ],
+  routeSteps: [
+    "Create your event",
+    "Choose event type and priorities",
+    "Complete the checklists",
+    "Save concrete actions",
+    "Download your runbook"
   ],
   learn: [
     { title: "Inclusion is more than saying welcome", text: "It is about who feels invited, who can actually take part and who feels safe enough to be themselves.", detail: "An inclusive event does not have to be perfect. It helps to think about language, reach, comfort, boundaries, privacy and evaluation before the event starts." },
@@ -474,9 +494,16 @@ content.en = {
 
 content.fr = {
   actions: [
-    { tab: "event", kicker: "Creer", title: "Mon evenement", text: "Creez votre fiche event, completez votre deroule, cochez les themes et telechargez votre preparation.", cta: "Travailler sur mon event" },
-    { tab: "themes", kicker: "Apprendre", title: "Themes inclusion", text: "Ouvrez les cartes thematiques et voyez ce que l'accessibilite, la communication, la securite et l'inclusion signifient en pratique.", cta: "Voir les themes" },
-    { tab: "cases", kicker: "Explorer", title: "Real life cases", text: "Apprenez d'exemples reels et emportez de petites actions pour votre propre organisation.", cta: "Voir les cases" }
+    { tab: "event", kicker: "Etape 1", title: "Je veux checker mon event", text: "Creez votre event, choisissez vos priorites et voyez ou votre preparation est deja forte.", cta: "Lancer mon check" },
+    { tab: "event", kicker: "Etape 2", title: "Je veux faire un plan inclusion", text: "Transformez vos choix d'accessibilite, de communication et de securite en actions concretes.", cta: "Creer mon plan" },
+    { tab: "cases", kicker: "Inspiration", title: "Je veux voir des exemples", text: "Apprenez de cas reels reconnaissables et prenez de petites actions pour votre event.", cta: "Voir les exemples" }
+  ],
+  routeSteps: [
+    "Creer votre event",
+    "Choisir le type et les priorites",
+    "Completer les checklists",
+    "Enregistrer des actions concretes",
+    "Telecharger votre deroule"
   ],
   learn: [
     { title: "L'inclusion ne se limite pas a dire bienvenue", text: "Il s'agit de savoir qui se sent invite, qui peut vraiment participer et qui se sent assez en securite pour etre soi-meme.", detail: "Un evenement inclusif ne doit pas etre parfait. Il aide de penser a la langue, au public, au confort, aux limites, a la vie privee et a l'evaluation." },
@@ -655,6 +682,7 @@ const learnEl = document.querySelector("#learnList");
 const homeComponentsEl = document.querySelector("#homeComponents");
 const themePageEl = document.querySelector("#themePageContent");
 const actionEl = document.querySelector("#actionList");
+const guidedFlowEl = document.querySelector("#guidedFlow");
 const heroActionsEl = document.querySelector("#heroActions");
 const methodEl = document.querySelector("#methodList");
 const scenarioCard = document.querySelector("#scenarioCard");
@@ -691,10 +719,12 @@ let currentLanguage = localStorage.getItem("openEventKitLanguage") || "nl";
 if (!copy[currentLanguage]) currentLanguage = "nl";
 let currentUser = null;
 let appState = { events: [], selectedEventId: null };
+let backendAvailable = true;
 let selectedThemeIndex = 0;
 let selectedCaseTheme = "all";
 let isCreatingEvent = false;
 let draftPriorityKeys = [];
+const PREVIEW_STATE_KEY = "alloraPreviewState";
 
 function emptyState() {
   return { events: [createEmptyEvent()], selectedEventId: null };
@@ -814,26 +844,58 @@ function showToast(message) {
   window.setTimeout(() => toast.classList.remove("is-visible"), 1800);
 }
 
+function loadPreviewState() {
+  try {
+    const stored = localStorage.getItem(PREVIEW_STATE_KEY);
+    return stored ? normalizeState(JSON.parse(stored)) : emptyState();
+  } catch (error) {
+    return emptyState();
+  }
+}
+
+function savePreviewState() {
+  try {
+    localStorage.setItem(PREVIEW_STATE_KEY, JSON.stringify(appState));
+  } catch (error) {
+    // Preview saving is best-effort when the online backend is unavailable.
+  }
+}
+
 async function api(path, options = {}) {
   const response = await fetch(path, {
     credentials: "same-origin",
     headers: { "Content-Type": "application/json", ...(options.headers || {}) },
     ...options
   });
-  const data = await response.json();
+  const contentType = response.headers.get("content-type") || "";
+  const isJson = contentType.includes("application/json");
+  const data = isJson ? await response.json() : null;
+  if (!isJson) {
+    throw new Error(t("backendUnavailable"));
+  }
   if (!response.ok) throw new Error(data.error || "Er ging iets mis.");
   return data;
 }
 
 async function loadSession() {
-  const data = await api("/api/me");
-  currentUser = data.user;
-  appState = normalizeState(data.state);
+  try {
+    const data = await api("/api/me");
+    backendAvailable = true;
+    currentUser = data.user;
+    appState = normalizeState(data.state);
+  } catch (error) {
+    backendAvailable = false;
+    currentUser = null;
+    appState = loadPreviewState();
+  }
 }
 
 async function persistState() {
+  if (!backendAvailable) {
+    savePreviewState();
+    return;
+  }
   if (!currentUser) {
-    showToast(t("accountRequired"));
     return;
   }
   try {
@@ -1110,11 +1172,23 @@ function renderActions() {
   `).join("");
 
   if (heroActionsEl) {
-    heroActionsEl.innerHTML = actions.slice(0, 2).map((item, index) => `
+    heroActionsEl.innerHTML = actions.slice(0, 3).map((item, index) => `
       <button class="${index === 0 ? "primary-button" : "ghost-button"}" data-open-tab="${item.tab}">
         ${item.cta}
       </button>
     `).join("");
+  }
+
+  if (guidedFlowEl) {
+    const steps = currentContent().routeSteps || [];
+    guidedFlowEl.innerHTML = `
+      <div class="guided-flow-heading">
+        <p class="eyebrow">${t("guidedFlowTitle")}</p>
+      </div>
+      <ol>
+        ${steps.map((step) => `<li>${step}</li>`).join("")}
+      </ol>
+    `;
   }
 }
 
@@ -2178,6 +2252,10 @@ authPanel.addEventListener("submit", async (event) => {
   const form = event.target.closest("[data-auth-form]");
   if (!form) return;
   event.preventDefault();
+  if (!backendAvailable) {
+    showToast(t("backendUnavailable"));
+    return;
+  }
   const payload = Object.fromEntries(new FormData(form).entries());
   const endpoint = form.dataset.authForm === "register" ? "/api/register" : "/api/login";
   try {
@@ -2195,10 +2273,14 @@ authPanel.addEventListener("submit", async (event) => {
 
 authPanel.addEventListener("click", async (event) => {
   if (event.target.dataset.authAction !== "logout") return;
-  await api("/api/logout", { method: "POST", body: "{}" });
-  currentUser = null;
-  appState = emptyState();
-  renderAll();
+  try {
+    await api("/api/logout", { method: "POST", body: "{}" });
+    currentUser = null;
+    appState = emptyState();
+    renderAll();
+  } catch (error) {
+    showToast(error.message);
+  }
 });
 
 document.addEventListener("change", (event) => {
@@ -2399,11 +2481,6 @@ document.querySelector("#saveEventProfile").addEventListener("click", () => {
 
 loadSession()
   .then(() => {
-    renderAll();
-    activateCurrentHash();
-  })
-  .catch((error) => {
-    showToast(error.message);
     renderAll();
     activateCurrentHash();
   });

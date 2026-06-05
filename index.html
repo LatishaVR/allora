@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Allora</title>
-    <link rel="stylesheet" href="styles.css?v=event-type-dropdown" />
+    <link rel="stylesheet" href="styles.css?v=api-fallback" />
   </head>
   <body>
     <header class="site-header">
@@ -56,9 +56,10 @@
 
         <section class="home-lower">
           <div class="action-section-heading">
-            <h2 data-i18n="actionSectionTitle">Werk verder zoals in de gids</h2>
+            <h2 data-i18n="actionSectionTitle">Waar wil je mee starten?</h2>
           </div>
           <div class="quick-actions" id="actionList" aria-label="Acties"></div>
+          <div class="guided-flow" id="guidedFlow"></div>
 
           <div class="component-section">
             <div class="action-section-heading">
@@ -226,6 +227,6 @@
     </div>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
-    <script src="script.js?v=event-type-dropdown"></script>
+    <script src="script.js?v=api-fallback"></script>
   </body>
 </html>

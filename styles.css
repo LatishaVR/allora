@@ -631,7 +631,59 @@ textarea:focus-visible {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   align-items: stretch;
   gap: 16px;
-  padding-bottom: 26px;
+  padding-bottom: 18px;
+}
+
+.guided-flow {
+  display: grid;
+  gap: 12px;
+  margin: 0 0 28px;
+  padding: 18px;
+  border: 1px solid rgba(8, 42, 105, 0.08);
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at 100% 0, rgba(255, 173, 132, 0.13), transparent 12rem),
+    rgba(255, 255, 255, 0.82);
+  box-shadow: 0 12px 28px rgba(8, 42, 105, 0.05);
+}
+
+.guided-flow ol {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  counter-reset: allora-step;
+}
+
+.guided-flow li {
+  position: relative;
+  min-height: 78px;
+  padding: 14px 12px 12px 42px;
+  border: 1px solid rgba(8, 42, 105, 0.08);
+  border-radius: 12px;
+  color: var(--blue-dark);
+  background: #fff;
+  font-weight: 850;
+  line-height: 1.32;
+}
+
+.guided-flow li::before {
+  counter-increment: allora-step;
+  content: counter(allora-step);
+  position: absolute;
+  left: 12px;
+  top: 14px;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 8px;
+  color: #fff;
+  background: var(--blue-dark);
+  font-size: 0.78rem;
+  font-weight: 950;
 }
 
 .component-grid {
@@ -646,7 +698,7 @@ textarea:focus-visible {
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
   gap: 14px;
-  min-height: 188px;
+  min-height: 202px;
   padding: 22px;
   text-align: left;
   border: 1px solid rgba(8, 42, 105, 0.1);
@@ -760,7 +812,7 @@ textarea:focus-visible {
 .action-cta {
   display: inline-block;
   align-self: end;
-  margin-top: 18px;
+  margin-top: 20px;
   color: var(--blue-dark);
   font-weight: 950;
 }
@@ -2120,6 +2172,14 @@ h3 {
   .snippet-grid,
   .case-grid {
     grid-template-columns: 1fr;
+  }
+
+  .guided-flow ol {
+    grid-template-columns: 1fr;
+  }
+
+  .guided-flow li {
+    min-height: 0;
   }
 
   .section-heading {
