@@ -44,7 +44,17 @@ const copy = {
     tabToolkit: "Tools",
     tabEvent: "Mijn evenement",
     tabThemes: "Inclusiethema's",
+    tabGuide: "Handleiding",
     tabPlan: "Plan",
+    guideEyebrow: "Allora inclusiegids",
+    guideTitle: "Lees de handleiding als magazine",
+    guideText: "Gebruik de gids als rustig startpunt naast het platform. Je kan door de pagina's bladeren, thema's nalezen en de PDF downloaden voor later.",
+    openGuide: "Open in nieuw venster",
+    downloadGuide: "Download handleiding",
+    guideCoverLabel: "Inclusiegids",
+    guideReaderLabel: "Magazine preview",
+    guideFallbackTitle: "De preview kan hier niet laden",
+    guideFallbackText: "Open of download de handleiding om ze te lezen.",
     homeLabel: "Startpunt",
     homeTitle: "Wat wil je vandaag verbeteren?",
     statThemes: "thema's",
@@ -76,6 +86,16 @@ const copy = {
     eventSelectLabel: "Kies event",
     createEvent: "Nieuw event",
     deleteEvent: "Verwijder event",
+    closeEvent: "Sluit event af",
+    eventClosed: "Event afgesloten en bewaard in je archief.",
+    reopenEvent: "Heropen",
+    downloadArchivedRunbook: "Download draaiboek",
+    closedEventsTitle: "Afgesloten evenementen",
+    closedEventsText: "Deze evenementen blijven gekoppeld aan je account. Je kan hun draaiboek opnieuw downloaden of een event heropenen.",
+    noClosedEvents: "Nog geen afgesloten evenementen.",
+    editEventNameLabel: "Naam",
+    saveEventName: "Naam opslaan",
+    eventNameSaved: "Eventnaam opgeslagen.",
     eventDeleted: "Event verwijderd.",
     eventNameLabel: "Naam event",
     eventNamePlaceholder: "Bijvoorbeeld: Samen aan tafel, Open atelier...",
@@ -98,6 +118,10 @@ const copy = {
     actionAdded: "Actie toegevoegd aan je event.",
     saveEvent: "Bewaar event",
     downloadRunbook: "Download mijn draaiboek",
+    runbookPreviewEyebrow: "Preview",
+    runbookPreviewTitle: "Bekijk je draaiboek",
+    runbookPreviewText: "Deze preview toont wat er ongeveer in je download komt. Lege onderdelen worden niet getoond.",
+    runbookPreviewEmpty: "Vul je eventfiche, startkeuzes of draaiboek in om hier een preview te zien.",
     eventProgressLabel: "Voortgang checklists",
     profileSaved: "Eventprofiel bewaard.",
     profileEmpty: "Nog geen profiel aangemaakt.",
@@ -113,6 +137,15 @@ const copy = {
     backendUnavailable: "Accounts werken pas wanneer de online database gekoppeld is.",
     accountCreated: "Account aangemaakt. Bevestig eventueel je e-mail en log daarna in.",
     accountSignedIn: "Je bent ingelogd.",
+    invalidEmail: "Vul een geldig e-mailadres in met een @.",
+    invalidPassword: "Gebruik minstens 8 tekens, 1 hoofdletter en 1 speciaal teken.",
+    passwordRules: "Minstens 8 tekens, 1 hoofdletter en 1 speciaal teken.",
+    duplicateName: "Deze naam bestaat al. Kies een andere naam.",
+    accountEventGateTitle: "Log in om je event te bewaren",
+    accountEventGateText: "Je draaiboek, checklists en acties worden gekoppeld aan je account. Zo kan je later verder werken aan hetzelfde event.",
+    focusThemesTitle: "Welke inclusiethema's wil je aanpakken?",
+    focusThemesText: "Kies een of meerdere thema's. Allora toont daarna vooral de checks en acties die daarbij horen.",
+    focusThemesEmpty: "Kies eerst een of meerdere inclusiethema's om gerichte checklists te zien.",
     addRow: "Rij toevoegen",
     removeRow: "Verwijder",
     more: "Meer info",
@@ -177,7 +210,17 @@ const copy = {
     tabToolkit: "Tools",
     tabEvent: "My event",
     tabThemes: "Inclusion themes",
+    tabGuide: "Guide",
     tabPlan: "Plan",
+    guideEyebrow: "Allora inclusion guide",
+    guideTitle: "Read the guide like a magazine",
+    guideText: "Use the guide as a calm starting point next to the platform. Browse the pages, revisit themes and download the PDF for later.",
+    openGuide: "Open in new window",
+    downloadGuide: "Download guide",
+    guideCoverLabel: "Inclusion guide",
+    guideReaderLabel: "Magazine preview",
+    guideFallbackTitle: "The preview cannot load here",
+    guideFallbackText: "Open or download the guide to read it.",
     homeLabel: "Starting point",
     homeTitle: "What do you want to improve today?",
     statThemes: "themes",
@@ -209,6 +252,16 @@ const copy = {
     eventSelectLabel: "Choose event",
     createEvent: "New event",
     deleteEvent: "Delete event",
+    closeEvent: "Close event",
+    eventClosed: "Event closed and saved in your archive.",
+    reopenEvent: "Reopen",
+    downloadArchivedRunbook: "Download runbook",
+    closedEventsTitle: "Closed events",
+    closedEventsText: "These events stay linked to your account. You can download their runbook again or reopen an event.",
+    noClosedEvents: "No closed events yet.",
+    editEventNameLabel: "Name",
+    saveEventName: "Save name",
+    eventNameSaved: "Event name saved.",
     eventDeleted: "Event deleted.",
     eventNameLabel: "Event name",
     eventNamePlaceholder: "For example: Community dinner, Open studio...",
@@ -231,6 +284,10 @@ const copy = {
     actionAdded: "Action added to your event.",
     saveEvent: "Save profile",
     downloadRunbook: "Download my runbook",
+    runbookPreviewEyebrow: "Preview",
+    runbookPreviewTitle: "Preview your runbook",
+    runbookPreviewText: "This preview shows what will roughly appear in your download. Empty parts are not shown.",
+    runbookPreviewEmpty: "Fill in your event profile, start choices or runbook to see a preview here.",
     eventProgressLabel: "Progress",
     profileSaved: "Event profile saved.",
     profileEmpty: "No profile yet.",
@@ -246,6 +303,15 @@ const copy = {
     backendUnavailable: "Accounts will work once the online database is connected.",
     accountCreated: "Account created. Confirm your email if needed, then log in.",
     accountSignedIn: "You are logged in.",
+    invalidEmail: "Enter a valid email address with @.",
+    invalidPassword: "Use at least 8 characters, 1 uppercase letter and 1 special character.",
+    passwordRules: "At least 8 characters, 1 uppercase letter and 1 special character.",
+    duplicateName: "This name already exists. Choose another name.",
+    accountEventGateTitle: "Log in to save your event",
+    accountEventGateText: "Your runbook, checklists and actions are linked to your account, so you can continue later.",
+    focusThemesTitle: "Which inclusion themes do you want to focus on?",
+    focusThemesText: "Choose one or more themes. Allora will then show the checks and actions that match your focus.",
+    focusThemesEmpty: "Choose one or more inclusion themes first to see focused checklists.",
     addRow: "Add row",
     removeRow: "Remove",
     more: "More info",
@@ -310,7 +376,17 @@ const copy = {
     tabToolkit: "Outils",
     tabEvent: "Mon evenement",
     tabThemes: "Themes inclusion",
+    tabGuide: "Guide",
     tabPlan: "Plan",
+    guideEyebrow: "Guide inclusion Allora",
+    guideTitle: "Lire le guide comme un magazine",
+    guideText: "Utilisez le guide comme point de depart calme a cote du platform. Parcourez les pages, relisez les themes et telechargez le PDF pour plus tard.",
+    openGuide: "Ouvrir dans une nouvelle fenetre",
+    downloadGuide: "Telecharger le guide",
+    guideCoverLabel: "Guide inclusion",
+    guideReaderLabel: "Preview magazine",
+    guideFallbackTitle: "La preview ne peut pas se charger ici",
+    guideFallbackText: "Ouvrez ou telechargez le guide pour le lire.",
     homeLabel: "Point de depart",
     homeTitle: "Que voulez-vous ameliorer aujourd'hui?",
     statThemes: "themes",
@@ -342,6 +418,16 @@ const copy = {
     eventSelectLabel: "Choisir event",
     createEvent: "Nouvel event",
     deleteEvent: "Supprimer event",
+    closeEvent: "Cloturer event",
+    eventClosed: "Event cloture et garde dans vos archives.",
+    reopenEvent: "Rouvrir",
+    downloadArchivedRunbook: "Telecharger le deroule",
+    closedEventsTitle: "Events clotures",
+    closedEventsText: "Ces events restent lies a votre compte. Vous pouvez retelecharger leur deroule ou rouvrir un event.",
+    noClosedEvents: "Aucun event cloture pour le moment.",
+    editEventNameLabel: "Nom",
+    saveEventName: "Enregistrer le nom",
+    eventNameSaved: "Nom de l'event enregistre.",
     eventDeleted: "Event supprime.",
     eventNameLabel: "Nom de l'event",
     eventNamePlaceholder: "Par exemple: Table commune, Atelier ouvert...",
@@ -364,6 +450,10 @@ const copy = {
     actionAdded: "Action ajoutee a votre event.",
     saveEvent: "Enregistrer le profil",
     downloadRunbook: "Telecharger mon deroule",
+    runbookPreviewEyebrow: "Preview",
+    runbookPreviewTitle: "Voir votre deroule",
+    runbookPreviewText: "Cette preview montre ce qui apparaitra environ dans votre telechargement. Les parties vides ne sont pas affichees.",
+    runbookPreviewEmpty: "Completez votre fiche event, vos choix de depart ou votre deroule pour voir une preview ici.",
     eventProgressLabel: "Progression",
     profileSaved: "Profil enregistre.",
     profileEmpty: "Pas encore de profil.",
@@ -379,6 +469,15 @@ const copy = {
     backendUnavailable: "Les comptes fonctionneront quand la base de donnees en ligne sera connectee.",
     accountCreated: "Compte cree. Confirmez votre e-mail si necessaire, puis connectez-vous.",
     accountSignedIn: "Vous etes connecte.",
+    invalidEmail: "Indiquez une adresse e-mail valide avec @.",
+    invalidPassword: "Utilisez au moins 8 caracteres, 1 majuscule et 1 caractere special.",
+    passwordRules: "Au moins 8 caracteres, 1 majuscule et 1 caractere special.",
+    duplicateName: "Ce nom existe deja. Choisissez un autre nom.",
+    accountEventGateTitle: "Connectez-vous pour enregistrer votre event",
+    accountEventGateText: "Votre deroule, vos checklists et vos actions sont lies a votre compte pour continuer plus tard.",
+    focusThemesTitle: "Quels themes d'inclusion voulez-vous travailler?",
+    focusThemesText: "Choisissez un ou plusieurs themes. Allora montre ensuite surtout les checks et actions liees a votre focus.",
+    focusThemesEmpty: "Choisissez d'abord un ou plusieurs themes d'inclusion pour voir des checklists ciblees.",
     addRow: "Ajouter une ligne",
     removeRow: "Supprimer",
     more: "Plus d'info",
@@ -745,6 +844,11 @@ const eventProfileForm = document.querySelector("#eventProfileForm");
 const eventSelect = document.querySelector("#eventSelect");
 const createEventButton = document.querySelector("#createEvent");
 const deleteEventButton = document.querySelector("#deleteEvent");
+const closeEventButton = document.querySelector("#closeEvent");
+const saveEventNameButton = document.querySelector("#saveEventName");
+const activeEventNameInput = document.querySelector("#activeEventNameInput");
+const eventNameEditor = document.querySelector(".event-name-editor");
+const closedEventsPanel = document.querySelector("#closedEventsPanel");
 const eventCreateForm = document.querySelector("#eventCreateForm");
 const cancelCreateEventButton = document.querySelector("#cancelCreateEvent");
 const newEventNameInput = document.querySelector("#newEventNameInput");
@@ -752,11 +856,13 @@ const eventPriorityChoices = document.querySelector("#eventPriorityChoices");
 const eventPanel = document.querySelector("#event");
 const eventSwitcherTitleEl = document.querySelector(".event-switcher h3");
 const eventSwitcherIntroEl = document.querySelector(".event-switcher > div:first-child");
+const eventSwitcherControls = document.querySelector(".event-switcher-controls");
 const eventPrimaryActions = document.querySelector("#event .section-heading > .button-row");
 const eventLayout = document.querySelector("#event .event-layout");
 const eventWorkspace = document.querySelector("#event .event-workspace");
 const organizerToolsEl = document.querySelector("#organizerTools");
 const savedActionsEl = document.querySelector("#savedActions");
+const runbookPreviewEl = document.querySelector("#runbookPreview");
 const eventProgressText = document.querySelector("#eventProgress");
 const eventProgressBar = document.querySelector("#eventProgressBar");
 const eventMeta = document.querySelector("#eventMeta");
@@ -838,6 +944,8 @@ function normalizeEvent(event) {
     runbook: event.runbook || {},
     organizerTools,
     actions: Array.isArray(event.actions) ? event.actions : [],
+    status: event.status === "closed" ? "closed" : "active",
+    closedAt: event.closedAt || "",
     needsName
   };
 }
@@ -848,6 +956,14 @@ function eventDisplayName(event) {
 
 function eventNeedsName(event = currentEvent()) {
   return Boolean(event?.needsName) || !((event?.name || event?.profile?.eventName || "").trim());
+}
+
+function activeEvents() {
+  return (appState.events || []).filter((event) => event.status !== "closed");
+}
+
+function closedEvents() {
+  return (appState.events || []).filter((event) => event.status === "closed");
 }
 
 function setEventName(event, name) {
@@ -886,6 +1002,10 @@ function getStoredChecks() {
 }
 
 function saveChecks(checks) {
+  if (!currentUser) {
+    showToast(t("accountRequired"));
+    return;
+  }
   currentEvent().checks = checks;
   persistState();
 }
@@ -936,6 +1056,27 @@ function normalizeSupabaseUser(user) {
     email: user.email || "",
     name: user.user_metadata?.name || user.email?.split("@")[0] || "Allora gebruiker"
   };
+}
+
+function isValidEmail(email = "") {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function isValidPassword(password = "") {
+  return password.length >= 8 && /[A-Z]/.test(password) && /[^A-Za-z0-9]/.test(password);
+}
+
+async function isAccountNameAvailable(name = "") {
+  if (!supabaseClient) return true;
+  const cleanName = name.trim();
+  if (!cleanName) return false;
+  const { data, error } = await supabaseClient
+    .from("profiles")
+    .select("id")
+    .ilike("name", cleanName)
+    .limit(1);
+  if (error) throw error;
+  return !data?.length;
 }
 
 async function ensureSupabaseWorkspaceEvent(userId) {
@@ -1079,9 +1220,10 @@ function renderAuthPanel() {
         <button type="submit">${t("accountLogin")}</button>
       </form>
       <form class="auth-form" data-auth-form="register">
-        <input name="name" placeholder="${t("accountName")}" required />
-        <input name="email" type="email" placeholder="${t("accountEmail")}" required />
-        <input name="password" type="password" placeholder="${t("accountPassword")}" required minlength="8" />
+        <input name="name" placeholder="${t("accountName")}" required autocomplete="name" />
+        <input name="email" type="email" placeholder="${t("accountEmail")}" required autocomplete="email" pattern="^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$" />
+        <input name="password" type="password" placeholder="${t("accountPassword")}" required minlength="8" pattern="(?=.*[A-Z])(?=.*[^A-Za-z0-9]).{8,}" autocomplete="new-password" />
+        <small class="password-rules">${t("passwordRules")}</small>
         <button type="submit">${t("accountRegister")}</button>
       </form>
     </details>
@@ -1090,7 +1232,37 @@ function renderAuthPanel() {
 
 function renderEventSwitcher() {
   if (!eventSelect) return;
-  const activeEvent = currentEvent();
+  if (!currentUser) {
+    if (eventPanel) eventPanel.classList.add("event-account-required");
+    if (eventPrimaryActions) eventPrimaryActions.hidden = true;
+    if (eventLayout) eventLayout.hidden = true;
+    if (eventWorkspace) eventWorkspace.hidden = true;
+    if (eventCreateForm) eventCreateForm.hidden = true;
+    if (eventSwitcherControls) eventSwitcherControls.hidden = true;
+    if (eventSwitcherTitleEl) eventSwitcherTitleEl.textContent = t("accountEventGateTitle");
+    if (eventSwitcherIntroEl) {
+      let hint = eventSwitcherIntroEl.querySelector(".event-setup-hint");
+      if (!hint) {
+        hint = document.createElement("p");
+        hint.className = "event-setup-hint";
+        eventSwitcherIntroEl.appendChild(hint);
+      }
+      hint.textContent = t("accountEventGateText");
+      hint.hidden = false;
+    }
+    return;
+  }
+
+  if (eventPanel) eventPanel.classList.remove("event-account-required");
+  if (eventSwitcherControls) eventSwitcherControls.hidden = false;
+  let activeEvent = currentEvent();
+  if (activeEvent.status === "closed") {
+    const firstOpenEvent = activeEvents()[0] || createEmptyEvent();
+    if (!appState.events.includes(firstOpenEvent)) appState.events.push(firstOpenEvent);
+    appState.selectedEventId = firstOpenEvent.id;
+    activeEvent = firstOpenEvent;
+    persistState();
+  }
   const hasUnnamedEvent = eventNeedsName(activeEvent);
   if (eventPanel) eventPanel.classList.toggle("event-setup-mode", hasUnnamedEvent);
   if (eventPrimaryActions) eventPrimaryActions.hidden = hasUnnamedEvent;
@@ -1098,6 +1270,12 @@ function renderEventSwitcher() {
   if (eventWorkspace) eventWorkspace.hidden = hasUnnamedEvent;
   if (createEventButton) createEventButton.hidden = hasUnnamedEvent;
   if (deleteEventButton) deleteEventButton.hidden = hasUnnamedEvent;
+  if (closeEventButton) closeEventButton.hidden = hasUnnamedEvent;
+  if (saveEventNameButton) saveEventNameButton.hidden = hasUnnamedEvent;
+  if (eventNameEditor) eventNameEditor.hidden = hasUnnamedEvent;
+  if (activeEventNameInput) {
+    activeEventNameInput.value = activeEvent.name || activeEvent.profile?.eventName || "";
+  }
   if (eventSelect) eventSelect.hidden = hasUnnamedEvent;
   if (eventSwitcherTitleEl) eventSwitcherTitleEl.textContent = hasUnnamedEvent ? t("eventSetupTitle") : t("eventSwitcherTitle");
   if (eventSwitcherIntroEl) {
@@ -1110,7 +1288,17 @@ function renderEventSwitcher() {
     hint.textContent = hasUnnamedEvent ? t("eventSetupHint") : "";
     hint.hidden = !hasUnnamedEvent;
   }
-  eventSelect.innerHTML = appState.events.map((event) => `
+  const openEvents = activeEvents();
+  if (!openEvents.length && !hasUnnamedEvent) {
+    const fallbackEvent = createEmptyEvent();
+    appState.events.push(fallbackEvent);
+    appState.selectedEventId = fallbackEvent.id;
+    isCreatingEvent = true;
+    persistState();
+    renderEventSwitcher();
+    return;
+  }
+  eventSelect.innerHTML = openEvents.map((event) => `
     <option value="${event.id}" ${event.id === appState.selectedEventId ? "selected" : ""}>${eventDisplayName(event)}</option>
   `).join("");
   if (eventCreateForm) {
@@ -1122,6 +1310,7 @@ function renderEventSwitcher() {
   }
   renderEventPriorityChoices();
   if (cancelCreateEventButton) cancelCreateEventButton.hidden = hasUnnamedEvent;
+  renderClosedEvents();
 }
 
 function renderSavedActions() {
@@ -1141,12 +1330,139 @@ function renderSavedActions() {
   `;
 }
 
+function eventProgressPercent(event) {
+  const selected = selectedFocusThemeIds(event);
+  const groups = selected.length
+    ? currentContent().checklist.filter((group) => selected.includes(group.id))
+    : currentContent().checklist;
+  const total = groups.reduce((sum, group) => sum + group.items.length, 0);
+  const visibleKeys = new Set(groups.flatMap((group) => group.items.map((_, itemIndex) => `${group.id}-${itemIndex}`)));
+  const done = Object.entries(event.checks || {}).filter(([key, value]) => visibleKeys.has(key) && value).length;
+  return total ? Math.round((done / total) * 100) : 0;
+}
+
+function renderClosedEvents() {
+  if (!closedEventsPanel) return;
+  if (!currentUser) {
+    closedEventsPanel.innerHTML = "";
+    closedEventsPanel.hidden = true;
+    return;
+  }
+  const archived = closedEvents();
+  closedEventsPanel.hidden = false;
+  closedEventsPanel.innerHTML = `
+    <div>
+      <p class="eyebrow">${t("closedEventsTitle")}</p>
+      <h3>${t("closedEventsTitle")}</h3>
+      <p>${t("closedEventsText")}</p>
+    </div>
+    ${archived.length ? `
+      <div class="closed-events-list">
+        ${archived.map((event) => `
+          <article class="closed-event-card">
+            <div>
+              <strong>${escapeHTML(eventDisplayName(event))}</strong>
+              <span>${event.closedAt ? new Date(event.closedAt).toLocaleDateString() : ""}</span>
+            </div>
+            <small>${eventProgressPercent(event)}% ${t("eventProgressLabel").toLowerCase()}</small>
+            <div class="button-row">
+              <button type="button" class="ghost-button" data-download-closed-event="${event.id}">${t("downloadArchivedRunbook")}</button>
+              <button type="button" class="copy-button" data-reopen-event="${event.id}">${t("reopenEvent")}</button>
+            </div>
+          </article>
+        `).join("")}
+      </div>
+    ` : `<p class="closed-events-empty">${t("noClosedEvents")}</p>`}
+  `;
+}
+
+function renderRunbookPreview() {
+  if (!runbookPreviewEl) return;
+  if (!currentUser) {
+    runbookPreviewEl.innerHTML = "";
+    return;
+  }
+  const event = currentEvent();
+  const toolkit = currentOrganizerToolkit();
+  const tools = event.organizerTools || {};
+  const eventType = toolkit.eventTypes.find((item) => item.key === tools.eventType);
+  const priorities = selectedPriorities(event);
+  const focusThemes = visibleChecklistGroups(event);
+  const profileRows = filledFieldPairs(currentContent().eventFields, {
+    ...(event.profile || {}),
+    eventName: event.name || event.profile?.eventName || ""
+  });
+  const runbookBlocks = getRunbookFields().map(([name, label]) => {
+    const value = event.runbook?.[name];
+    const schema = getRunbookTableSchema(name);
+    if (schema) {
+      const rows = (Array.isArray(value) ? value : []).filter((row) => rowHasFilledValue(row, schema));
+      if (!rows.length) return "";
+      return `
+        <section>
+          <h4>${escapeHTML(label)}</h4>
+          <table>
+            <tbody>
+              ${rows.slice(0, 4).map((row) => `<tr>${schema.columns.slice(0, 3).map((column) => `
+                <td>${escapeHTML(column.type === "checkbox" ? (row[column.key] ? "Ja" : "Nee") : row[column.key] || "")}</td>
+              `).join("")}</tr>`).join("")}
+            </tbody>
+          </table>
+        </section>
+      `;
+    }
+    if (!hasFilledValue(value)) return "";
+    return `<section><h4>${escapeHTML(label)}</h4><p>${escapeHTML(value).replace(/\n/g, "<br>")}</p></section>`;
+  }).filter(Boolean);
+  const actionItems = (event.actions || []).slice(0, 5);
+  const hasContent = profileRows.length || eventType || priorities.length || focusThemes.length || runbookBlocks.length || actionItems.length;
+  if (!hasContent) {
+    runbookPreviewEl.innerHTML = `<p class="runbook-preview-empty">${t("runbookPreviewEmpty")}</p>`;
+    return;
+  }
+  runbookPreviewEl.innerHTML = `
+    <article class="runbook-document-preview">
+      <header>
+        <span>Allora</span>
+        <h3>${escapeHTML(eventDisplayName(event))}</h3>
+        <p>Van idee naar inclusief event.</p>
+      </header>
+      ${profileRows.length ? `
+        <section>
+          <h4>Eventfiche</h4>
+          <dl>${profileRows.map(([label, value]) => `<div><dt>${escapeHTML(label)}</dt><dd>${escapeHTML(value)}</dd></div>`).join("")}</dl>
+        </section>
+      ` : ""}
+      ${eventType || priorities.length || focusThemes.length ? `
+        <section>
+          <h4>Startkeuzes</h4>
+          ${eventType ? `<p><strong>Eventvorm:</strong> ${escapeHTML(eventType.title)}</p>` : ""}
+          ${focusThemes.length ? `<p><strong>Inclusiethema's:</strong> ${focusThemes.map((group) => escapeHTML(group.title)).join(", ")}</p>` : ""}
+          ${priorities.length ? `<p><strong>Prioriteiten:</strong> ${priorities.map((priority) => escapeHTML(priority.title)).join(", ")}</p>` : ""}
+        </section>
+      ` : ""}
+      ${runbookBlocks.join("")}
+      ${actionItems.length ? `
+        <section>
+          <h4>${t("savedActionsTitle")}</h4>
+          <ul>${actionItems.map((action) => `<li>${escapeHTML(action.text)}</li>`).join("")}</ul>
+        </section>
+      ` : ""}
+    </article>
+  `;
+}
+
 function addActionToCurrentEvent(text, source = "") {
+  if (!currentUser) {
+    showToast(t("accountRequired"));
+    return;
+  }
   const event = currentEvent();
   const action = { text, source, createdAt: new Date().toISOString() };
   event.actions = [...(event.actions || []), action];
   persistState();
   renderSavedActions();
+  renderRunbookPreview();
   showToast(t("actionAdded"));
 }
 
@@ -1159,6 +1475,10 @@ function downloadFile(filename, text, type = "text/plain;charset=utf-8") {
   link.click();
   URL.revokeObjectURL(url);
   showToast(t("downloaded"));
+}
+
+function safeFilename(value = "Allora draaiboek") {
+  return String(value || "Allora draaiboek").replace(/[\\/:*?"<>|]/g, "-").trim() || "Allora draaiboek";
 }
 
 function escapeHTML(value = "") {
@@ -1285,7 +1605,9 @@ function activateTab(tabName) {
     check: "event",
     toolkit: "event",
     plan: "event",
-    practice: "themes"
+    practice: "themes",
+    handleiding: "guide",
+    gids: "guide"
   };
   tabName = aliases[tabName] || tabName;
   const button = document.querySelector(`[data-tab="${tabName}"]`);
@@ -1341,10 +1663,26 @@ function renderActions() {
 
 function renderChecklist() {
   const checks = getStoredChecks();
-  checklistEl.innerHTML = currentContent().checklist.map((group, groupIndex) => `
+  const groups = visibleChecklistGroups();
+  if (!groups.length) {
+    checklistEl.innerHTML = `
+      <article class="check-card check-empty">
+        <header>
+          <span class="badge">?</span>
+          <div>
+            <h3>${t("focusThemesTitle")}</h3>
+            <p>${t("focusThemesEmpty")}</p>
+          </div>
+        </header>
+      </article>
+    `;
+    updateProgress();
+    return;
+  }
+  checklistEl.innerHTML = groups.map((group) => `
     <article class="check-card">
       <header>
-        <span class="badge">${groupIndex + 1}</span>
+        <span class="badge">${currentContent().checklist.findIndex((item) => item.id === group.id) + 1}</span>
         <div>
           <h3>${group.title}</h3>
           <p>${group.tag}</p>
@@ -1368,8 +1706,10 @@ function renderChecklist() {
 
 function updateProgress() {
   const checks = getStoredChecks();
-  const total = currentContent().checklist.reduce((sum, group) => sum + group.items.length, 0);
-  const done = Object.values(checks).filter(Boolean).length;
+  const groups = visibleChecklistGroups();
+  const total = groups.reduce((sum, group) => sum + group.items.length, 0);
+  const visibleKeys = new Set(groups.flatMap((group) => group.items.map((_, itemIndex) => `${group.id}-${itemIndex}`)));
+  const done = Object.entries(checks).filter(([key, value]) => visibleKeys.has(key) && value).length;
   const percent = total ? Math.round((done / total) * 100) : 0;
   if (progressText && progressBar) {
     progressText.textContent = `${percent}%`;
@@ -1699,6 +2039,21 @@ function selectedPriorities(event = currentEvent()) {
   return toolkit.priorities.filter((item) => keys.includes(item.key));
 }
 
+function focusThemeOptions() {
+  return currentContent().checklist.filter((group) => !["basics", "event"].includes(group.id));
+}
+
+function selectedFocusThemeIds(event = currentEvent()) {
+  const themes = event.organizerTools?.focusThemes;
+  return Array.isArray(themes) ? themes : [];
+}
+
+function visibleChecklistGroups(event = currentEvent()) {
+  const selected = selectedFocusThemeIds(event);
+  if (!selected.length) return [];
+  return currentContent().checklist.filter((group) => selected.includes(group.id));
+}
+
 function togglePriority(key, event = currentEvent()) {
   const tools = event.organizerTools || {};
   const currentKeys = selectedPriorityKeys(event);
@@ -1709,6 +2064,18 @@ function togglePriority(key, event = currentEvent()) {
     ...tools,
     priorities: nextKeys,
     priority: nextKeys[0] || ""
+  };
+}
+
+function toggleFocusTheme(key, event = currentEvent()) {
+  const tools = event.organizerTools || {};
+  const currentThemes = selectedFocusThemeIds(event);
+  const nextThemes = currentThemes.includes(key)
+    ? currentThemes.filter((item) => item !== key)
+    : [...currentThemes, key];
+  event.organizerTools = {
+    ...tools,
+    focusThemes: nextThemes
   };
 }
 
@@ -1748,11 +2115,16 @@ function closeEventTypeAdvice() {
 
 function renderOrganizerTools() {
   if (!organizerToolsEl) return;
+  if (!currentUser) {
+    organizerToolsEl.innerHTML = "";
+    return;
+  }
   const toolkit = currentOrganizerToolkit();
   const labels = toolkit.labels || organizerToolkit.labels;
   const tools = currentEvent().organizerTools || {};
   const eventType = toolkit.eventTypes.find((item) => item.key === tools.eventType);
   const selectedKeys = selectedPriorityKeys();
+  const selectedThemes = selectedFocusThemeIds();
   const priorities = selectedPriorities();
   const fallbackPriority = selectedPriority();
   const priorityActions = priorities.length
@@ -1762,6 +2134,21 @@ function renderOrganizerTools() {
     <section class="tool-panel tool-panel-wide">
       <div>
         <span class="tool-step">1</span>
+        <h3>${t("focusThemesTitle")}</h3>
+        <p>${t("focusThemesText")}</p>
+      </div>
+      <div class="focus-theme-grid">
+        ${focusThemeOptions().map((group) => `
+          <button type="button" class="focus-theme-card ${selectedThemes.includes(group.id) ? "is-selected" : ""}" data-focus-theme="${group.id}">
+            <strong>${group.title}</strong>
+            <span>${group.tag}</span>
+          </button>
+        `).join("")}
+      </div>
+    </section>
+    <section class="tool-panel tool-panel-wide">
+      <div>
+        <span class="tool-step">2</span>
         <h3>${labels.eventTypeTitle}</h3>
         <p>${labels.eventTypeText}</p>
       </div>
@@ -1786,7 +2173,7 @@ function renderOrganizerTools() {
     </section>
     <section class="tool-panel">
       <div>
-        <span class="tool-step">2</span>
+        <span class="tool-step">3</span>
         <h3>${labels.priorityTitle}</h3>
         <p>${labels.priorityText}</p>
       </div>
@@ -1806,7 +2193,7 @@ function renderOrganizerTools() {
     </section>
     <section class="tool-panel">
       <div>
-        <span class="tool-step">3</span>
+        <span class="tool-step">4</span>
         <h3>${labels.accessTitle}</h3>
         <p>${labels.accessText}</p>
       </div>
@@ -1821,7 +2208,7 @@ function renderOrganizerTools() {
     </section>
     <section class="tool-panel tool-panel-wide">
       <div>
-        <span class="tool-step">4</span>
+        <span class="tool-step">5</span>
         <h3>${labels.communicationTitle}</h3>
         <p>${labels.communicationText}</p>
       </div>
@@ -1840,7 +2227,7 @@ function renderOrganizerTools() {
     </section>
     <section class="tool-panel">
       <div>
-        <span class="tool-step">5</span>
+        <span class="tool-step">6</span>
         <h3>${labels.feedbackTitle}</h3>
         <p>${labels.feedbackText}</p>
       </div>
@@ -1899,17 +2286,21 @@ function renderRunbookTable(name) {
 }
 
 function renderRunbookForm() {
+  if (!currentUser) {
+    runbookForm.innerHTML = "";
+    return;
+  }
   const data = currentEvent().runbook || {};
-  runbookForm.innerHTML = getRunbookFields().map(([name, label, placeholder]) => `
-    <section class="runbook-field" data-runbook-section="${name}">
-      <div>
-        <h3>${label}</h3>
-        <p>${placeholder}</p>
-      </div>
+  runbookForm.innerHTML = getRunbookFields().map(([name, label, placeholder], index) => `
+    <details class="runbook-field" data-runbook-section="${name}" ${index < 2 ? "open" : ""}>
+      <summary>
+        <span>${label}</span>
+        <small>${placeholder}</small>
+      </summary>
       ${getRunbookTableSchema(name)
         ? renderRunbookTable(name)
         : `<textarea name="${name}" data-runbook-field="${name}" placeholder="${placeholder}">${typeof data[name] === "string" ? data[name] : ""}</textarea>`}
-    </section>
+    </details>
   `).join("");
 }
 
@@ -1939,6 +2330,10 @@ function renderScenario(selectedIndex = null) {
 }
 
 function renderPlanForm() {
+  if (!currentUser) {
+    planForm.innerHTML = "";
+    return;
+  }
   const data = currentEvent().plan || {};
   const visibleFields = currentContent().planFields.filter(([name]) => name !== "eventName");
   planForm.innerHTML = visibleFields.map(([name, label, placeholder]) => `
@@ -1950,10 +2345,15 @@ function renderPlanForm() {
 }
 
 function renderEventProfile() {
+  if (!currentUser) {
+    eventProfileForm.innerHTML = "";
+    eventMeta.innerHTML = "";
+    return;
+  }
   const data = { ...(currentEvent().profile || {}), eventName: currentEvent().name || currentEvent().profile?.eventName || "" };
   const visibleFields = currentContent().eventFields.filter(([name]) => name !== "eventName");
   eventProfileForm.innerHTML = visibleFields.map(([name, label, placeholder], index) => `
-    <label>
+    <label class="event-profile-field event-profile-${name}">
       ${label}
       ${index === visibleFields.length - 1
         ? `<textarea name="${name}" placeholder="${placeholder}">${data[name] || ""}</textarea>`
@@ -1980,6 +2380,10 @@ function renderEventMeta(data) {
 }
 
 function saveEventProfile() {
+  if (!currentUser) {
+    showToast(t("accountRequired"));
+    return;
+  }
   const data = Object.fromEntries(new FormData(eventProfileForm).entries());
   const event = currentEvent();
   data.eventName = event.name || event.profile?.eventName || "";
@@ -1992,16 +2396,20 @@ function saveEventProfile() {
   persistState();
   renderEventMeta(data);
   renderEventSwitcher();
+  renderRunbookPreview();
 }
 
 function savePlan() {
+  if (!currentUser) return;
   const data = Object.fromEntries(new FormData(planForm).entries());
   data.eventName = currentEvent().name || currentEvent().profile?.eventName || "";
   currentEvent().plan = data;
   persistState();
+  renderRunbookPreview();
 }
 
 function saveRunbook() {
+  if (!currentUser) return;
   const data = {};
   runbookForm.querySelectorAll("[data-runbook-field]").forEach((field) => {
     data[field.dataset.runbookField] = field.value;
@@ -2021,6 +2429,7 @@ function saveRunbook() {
   });
   currentEvent().runbook = data;
   persistState();
+  renderRunbookPreview();
 }
 
 function saveOrganizerTools() {
@@ -2034,6 +2443,7 @@ function saveOrganizerTools() {
   const eventTypeSelect = organizerToolsEl.querySelector("[data-event-type-select]");
   event.organizerTools = { ...tools, eventType: eventTypeSelect?.value || tools.eventType || "", access };
   persistState();
+  renderRunbookPreview();
 }
 
 function addRunbookRow(name) {
@@ -2044,6 +2454,7 @@ function addRunbookRow(name) {
   event.runbook[name] = [...(Array.isArray(event.runbook[name]) ? event.runbook[name] : []), emptyRow];
   persistState();
   renderRunbookForm();
+  renderRunbookPreview();
 }
 
 function removeRunbookRow(name, rowIndex) {
@@ -2054,6 +2465,7 @@ function removeRunbookRow(name, rowIndex) {
   if (!event.runbook[name].length) event.runbook[name] = tableRows(name).slice(0, 1);
   persistState();
   renderRunbookForm();
+  renderRunbookPreview();
 }
 
 function planText() {
@@ -2069,7 +2481,7 @@ function planText() {
 }
 
 function checklistText() {
-  return currentContent().checklist.map((group) => {
+  return visibleChecklistGroups().map((group) => {
     const items = group.items.map((item) => `[ ] ${item}`).join("\n");
     return `${group.title}\n${items}`;
   }).join("\n\n");
@@ -2146,6 +2558,7 @@ function runbookText() {
     .join("\n");
   const priorities = selectedPriorities(event);
   const eventType = toolkit.eventTypes.find((item) => item.key === tools.eventType);
+  const focusThemes = visibleChecklistGroups(event);
   const accessText = toolkit.accessFields
     .map(([name, label]) => [label, tools.access?.[name]])
     .filter(([, value]) => hasFilledValue(value))
@@ -2154,9 +2567,10 @@ function runbookText() {
   const toolkitBlock = [
     eventType ? `Eventvorm: ${eventType.title}` : "",
     priorities.length ? `Prioriteiten:\n${priorities.map((priority) => `- ${priority.title}\n${priority.actions.map((action) => `  - ${action}`).join("\n")}`).join("\n")}` : "",
+    focusThemes.length ? `Inclusiethema's:\n${focusThemes.map((group) => `- ${group.title}`).join("\n")}` : "",
     textSection("Toegankelijkheidsfiche:", accessText)
   ].filter(Boolean).join("\n\n");
-  const checklistBlock = currentContent().checklist.map((group) => {
+  const checklistBlock = visibleChecklistGroups(event).map((group) => {
     const items = group.items.map((item, itemIndex) => {
       const key = `${group.id}-${itemIndex}`;
       return `[${checks[key] ? "x" : " "}] ${item}`;
@@ -2224,15 +2638,17 @@ function runbookDocument() {
   `;
   const priorities = selectedPriorities(event);
   const eventType = toolkit.eventTypes.find((item) => item.key === tools.eventType);
+  const focusThemes = visibleChecklistGroups(event);
   const filledAccessRows = toolkit.accessFields
     .map(([name, label]) => [name, label, tools.access?.[name]])
     .filter(([, , value]) => hasFilledValue(value));
   const toolkitSection = `
     ${eventType ? `<p><strong>Eventvorm:</strong> ${escapeHTML(eventType.title)}</p>` : ""}
     ${priorities.length ? `<h3>Prioriteiten</h3>${priorities.map((priority) => `<p><strong>${escapeHTML(priority.title)}</strong></p><ul>${priority.actions.map((action) => `<li>${escapeHTML(action)}</li>`).join("")}</ul>`).join("")}` : ""}
+    ${focusThemes.length ? `<h3>Inclusiethema's</h3><ul>${focusThemes.map((group) => `<li>${escapeHTML(group.title)}</li>`).join("")}</ul>` : ""}
     ${filledAccessRows.length ? `<h3>Toegankelijkheidsfiche</h3><table><tbody>${filledAccessRows.map(([, label, value]) => `<tr><th>${escapeHTML(label)}</th><td>${escapeHTML(value)}</td></tr>`).join("")}</tbody></table>` : ""}
   `;
-  const checklistBlock = currentContent().checklist.map((group) => `
+  const checklistBlock = visibleChecklistGroups(event).map((group) => `
     <h3>${escapeHTML(group.title)}</h3>
     <ul>
       ${group.items.map((item, itemIndex) => {
@@ -2272,6 +2688,67 @@ function runbookDocument() {
   </html>`;
 }
 
+function runbookDocumentFromEvent(event) {
+  const toolkit = currentOrganizerToolkit();
+  const tools = event.organizerTools || {};
+  const eventType = toolkit.eventTypes.find((item) => item.key === tools.eventType);
+  const priorities = selectedPriorities(event);
+  const focusThemes = visibleChecklistGroups(event);
+  const profileRows = filledFieldPairs(currentContent().eventFields, {
+    ...(event.profile || {}),
+    eventName: event.name || event.profile?.eventName || ""
+  });
+  const runbook = event.runbook || {};
+  const runbookSections = getRunbookFields().map(([name, label]) => {
+    const schema = getRunbookTableSchema(name);
+    if (schema) {
+      const rows = (Array.isArray(runbook[name]) ? runbook[name] : []).filter((row) => rowHasFilledValue(row, schema));
+      if (!rows.length) return "";
+      return `
+        <h3>${escapeHTML(label)}</h3>
+        <table>
+          <thead><tr>${schema.columns.map((column) => `<th>${escapeHTML(column.label)}</th>`).join("")}</tr></thead>
+          <tbody>
+            ${rows.map((row) => `<tr>${schema.columns.map((column) => `<td>${column.type === "checkbox" ? (row[column.key] ? "Ja" : "Nee") : escapeHTML(row[column.key] || "")}</td>`).join("")}</tr>`).join("")}
+          </tbody>
+        </table>
+      `;
+    }
+    return hasFilledValue(runbook[name]) ? `<h3>${escapeHTML(label)}</h3><p>${escapeHTML(runbook[name]).replace(/\n/g, "<br>")}</p>` : "";
+  }).filter(Boolean).join("");
+  const actions = (event.actions || []).map((action) => `<li>${escapeHTML(action.text)}${action.source ? ` (${escapeHTML(action.source)})` : ""}</li>`).join("");
+  return `<!doctype html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <title>${escapeHTML(eventDisplayName(event))} - Allora draaiboek</title>
+      <style>
+        body { font-family: Arial, sans-serif; color: #082b74; line-height: 1.5; }
+        h1 { font-size: 28px; margin-bottom: 4px; }
+        h2 { margin-top: 26px; padding-top: 12px; border-top: 2px solid #e8def1; font-size: 20px; }
+        h3 { margin-bottom: 4px; color: #6f4bb2; font-size: 14px; }
+        p, li, td { color: #26324a; }
+        table { width: 100%; border-collapse: collapse; margin: 8px 0 16px; }
+        th, td { border: 1px solid #e8def1; padding: 8px; text-align: left; vertical-align: top; }
+        th { background: #f7f0fb; color: #082b74; }
+      </style>
+    </head>
+    <body>
+      <h1>Allora draaiboek</h1>
+      <p>${escapeHTML(eventDisplayName(event))}</p>
+      ${profileRows.length ? `<h2>Eventfiche</h2>${profileRows.map(([label, value]) => `<h3>${escapeHTML(label)}</h3><p>${escapeHTML(value)}</p>`).join("")}` : ""}
+      ${eventType || priorities.length || focusThemes.length ? `
+        <h2>Startkeuzes</h2>
+        ${eventType ? `<p><strong>Eventvorm:</strong> ${escapeHTML(eventType.title)}</p>` : ""}
+        ${focusThemes.length ? `<p><strong>Inclusiethema's:</strong> ${focusThemes.map((group) => escapeHTML(group.title)).join(", ")}</p>` : ""}
+        ${priorities.length ? `<p><strong>Prioriteiten:</strong> ${priorities.map((priority) => escapeHTML(priority.title)).join(", ")}</p>` : ""}
+      ` : ""}
+      ${runbookSections ? `<h2>Draaiboek</h2>${runbookSections}` : ""}
+      ${actions ? `<h2>Opgeslagen acties</h2><ul>${actions}</ul>` : ""}
+    </body>
+  </html>`;
+}
+
 function renderAll() {
   renderStaticText();
   renderAuthPanel();
@@ -2289,6 +2766,8 @@ function renderAll() {
   renderPlanForm();
   renderEventProfile();
   renderSavedActions();
+  renderClosedEvents();
+  renderRunbookPreview();
 }
 
 document.querySelectorAll("[data-tab]").forEach((button) => {
@@ -2365,6 +2844,21 @@ if (cancelCreateEventButton) {
   });
 }
 
+if (saveEventNameButton) {
+  saveEventNameButton.addEventListener("click", () => {
+    const event = currentEvent();
+    const nextName = (activeEventNameInput?.value || "").trim();
+    if (!nextName) {
+      activeEventNameInput?.focus();
+      return;
+    }
+    setEventName(event, nextName);
+    persistState();
+    renderAll();
+    showToast(t("eventNameSaved"));
+  });
+}
+
 if (eventCreateForm) {
   eventCreateForm.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -2393,17 +2887,43 @@ if (eventCreateForm) {
   });
 }
 
+if (closeEventButton) {
+  closeEventButton.addEventListener("click", () => {
+    saveEventProfile();
+    savePlan();
+    saveOrganizerTools();
+    saveRunbook();
+    const event = currentEvent();
+    event.status = "closed";
+    event.closedAt = new Date().toISOString();
+    const nextActive = activeEvents().find((item) => item.id !== event.id);
+    if (nextActive) {
+      appState.selectedEventId = nextActive.id;
+      isCreatingEvent = false;
+    } else {
+      const fallbackEvent = createEmptyEvent();
+      appState.events.push(fallbackEvent);
+      appState.selectedEventId = fallbackEvent.id;
+      isCreatingEvent = true;
+    }
+    persistState();
+    renderAll();
+    showToast(t("eventClosed"));
+  });
+}
+
 if (deleteEventButton) {
   deleteEventButton.addEventListener("click", () => {
     const activeId = appState.selectedEventId;
     appState.events = appState.events.filter((event) => event.id !== activeId);
-    if (!appState.events.length) {
+    const nextActive = activeEvents()[0];
+    if (!nextActive) {
       const fallbackEvent = createEmptyEvent();
-      appState.events = [fallbackEvent];
+      appState.events.push(fallbackEvent);
       appState.selectedEventId = fallbackEvent.id;
       isCreatingEvent = true;
     } else {
-      appState.selectedEventId = appState.events[0].id;
+      appState.selectedEventId = nextActive.id;
       isCreatingEvent = false;
     }
     persistState();
@@ -2425,15 +2945,32 @@ authPanel.addEventListener("submit", async (event) => {
     if (supabaseClient) {
       backendAvailable = true;
       const isRegistering = form.dataset.authForm === "register";
+      const email = (payload.email || "").toString().trim();
+      const password = (payload.password || "").toString();
+      const name = (payload.name || "").toString().trim();
+      if (!isValidEmail(email)) {
+        showToast(t("invalidEmail"));
+        return;
+      }
+      if (isRegistering) {
+        if (!isValidPassword(password)) {
+          showToast(t("invalidPassword"));
+          return;
+        }
+        if (!(await isAccountNameAvailable(name))) {
+          showToast(t("duplicateName"));
+          return;
+        }
+      }
       const authResponse = isRegistering
         ? await supabaseClient.auth.signUp({
-            email: payload.email,
-            password: payload.password,
-            options: { data: { name: payload.name || "" } }
+            email,
+            password,
+            options: { data: { name } }
           })
         : await supabaseClient.auth.signInWithPassword({
-            email: payload.email,
-            password: payload.password
+            email,
+            password
           });
       if (authResponse.error) throw authResponse.error;
       if (!authResponse.data.session && isRegistering) {
@@ -2484,6 +3021,7 @@ document.addEventListener("change", (event) => {
     currentEvent().organizerTools = { ...(currentEvent().organizerTools || {}), eventType: event.target.value };
     persistState();
     renderOrganizerTools();
+    renderRunbookPreview();
     if (event.target.value) openEventTypeAdvice(event.target.value);
     return;
   }
@@ -2519,6 +3057,18 @@ document.addEventListener("click", async (event) => {
     togglePriority(priorityTarget.dataset.priorityKey);
     persistState();
     renderOrganizerTools();
+    renderRunbookPreview();
+    return;
+  }
+
+  const focusThemeTarget = event.target.closest("[data-focus-theme]");
+  if (focusThemeTarget) {
+    toggleFocusTheme(focusThemeTarget.dataset.focusTheme);
+    persistState();
+    renderOrganizerTools();
+    renderChecklist();
+    updateProgress();
+    renderRunbookPreview();
     return;
   }
 
@@ -2535,6 +3085,7 @@ document.addEventListener("click", async (event) => {
     }
     renderEventPriorityChoices();
     renderOrganizerTools();
+    renderRunbookPreview();
     return;
   }
 
@@ -2558,6 +3109,28 @@ document.addEventListener("click", async (event) => {
     activeEvent.actions = (activeEvent.actions || []).filter((_, actionIndex) => actionIndex !== index);
     persistState();
     renderSavedActions();
+    renderRunbookPreview();
+    return;
+  }
+
+  const reopenTarget = event.target.closest("[data-reopen-event]");
+  if (reopenTarget) {
+    const archivedEvent = appState.events.find((item) => item.id === reopenTarget.dataset.reopenEvent);
+    if (!archivedEvent) return;
+    archivedEvent.status = "active";
+    archivedEvent.closedAt = "";
+    appState.selectedEventId = archivedEvent.id;
+    isCreatingEvent = false;
+    persistState();
+    renderAll();
+    return;
+  }
+
+  const downloadClosedTarget = event.target.closest("[data-download-closed-event]");
+  if (downloadClosedTarget) {
+    const archivedEvent = appState.events.find((item) => item.id === downloadClosedTarget.dataset.downloadClosedEvent);
+    if (!archivedEvent) return;
+    downloadFile(`${safeFilename(eventDisplayName(archivedEvent))} - Allora draaiboek.doc`, runbookDocumentFromEvent(archivedEvent), "application/msword;charset=utf-8");
     return;
   }
 

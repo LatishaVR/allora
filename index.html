@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Allora</title>
-    <link rel="stylesheet" href="styles.css?v=full-editorial-style" />
+    <link rel="stylesheet" href="styles.css?v=event-archive-polish" />
   </head>
   <body>
     <header class="site-header">
@@ -15,6 +15,7 @@
       <nav class="top-nav" aria-label="Platform onderdelen">
         <button class="nav-item" data-tab="event" data-i18n="tabEvent">Mijn evenement</button>
         <button class="nav-item" data-tab="themes" data-i18n="tabThemes">Inclusiethema's</button>
+        <button class="nav-item" data-tab="guide" data-i18n="tabGuide">Handleiding</button>
         <button class="nav-item" data-tab="cases" data-i18n="tabCases">Real life cases</button>
       </nav>
 
@@ -108,6 +109,38 @@
         </section>
       </section>
 
+      <section id="guide" class="tab-panel">
+        <div class="guide-hero">
+          <div class="guide-copy">
+            <p class="eyebrow" data-i18n="guideEyebrow">Allora inclusiegids</p>
+            <h2 data-i18n="guideTitle">Lees de handleiding als magazine</h2>
+            <p data-i18n="guideText">Gebruik de gids als rustig startpunt naast het platform. Je kan door de pagina's bladeren, thema's nalezen en de PDF downloaden voor later.</p>
+            <div class="button-row">
+              <a class="primary-button" href="Allora-Inclusiegids.pdf" target="_blank" rel="noopener" data-i18n="openGuide">Open in nieuw venster</a>
+              <a class="ghost-button" href="Allora-Inclusiegids.pdf" download data-i18n="downloadGuide">Download handleiding</a>
+            </div>
+          </div>
+          <aside class="guide-cover-card" aria-hidden="true">
+            <img src="allora-logo-slogan.png" alt="" />
+            <span data-i18n="guideCoverLabel">Inclusiegids</span>
+          </aside>
+        </div>
+
+        <div class="guide-reader">
+          <div class="guide-reader-toolbar">
+            <span data-i18n="guideReaderLabel">Magazine preview</span>
+            <a href="Allora-Inclusiegids.pdf" download data-i18n="downloadGuide">Download handleiding</a>
+          </div>
+          <object class="guide-frame" data="Allora-Inclusiegids.pdf#toolbar=0&navpanes=0&view=FitH" type="application/pdf">
+            <div class="guide-fallback">
+              <h3 data-i18n="guideFallbackTitle">De preview kan hier niet laden</h3>
+              <p data-i18n="guideFallbackText">Open of download de handleiding om ze te lezen.</p>
+              <a class="primary-button" href="Allora-Inclusiegids.pdf" target="_blank" rel="noopener" data-i18n="openGuide">Open in nieuw venster</a>
+            </div>
+          </object>
+        </div>
+      </section>
+
       <section id="event" class="tab-panel">
         <div class="section-heading">
           <div>
@@ -128,7 +161,13 @@
           <div class="event-switcher-controls">
             <label class="sr-only" for="eventSelect" data-i18n="eventSelectLabel">Kies event</label>
             <select id="eventSelect" aria-label="Kies event"></select>
+            <label class="event-name-editor">
+              <span data-i18n="editEventNameLabel">Naam</span>
+              <input id="activeEventNameInput" placeholder="Naam van je event" />
+            </label>
+            <button class="ghost-button" type="button" id="saveEventName" data-i18n="saveEventName">Naam opslaan</button>
             <button class="ghost-button" type="button" id="createEvent" data-i18n="createEvent">Nieuw event</button>
+            <button class="ghost-button" type="button" id="closeEvent" data-i18n="closeEvent">Sluit event af</button>
             <button class="ghost-button danger-button" type="button" id="deleteEvent" data-i18n="deleteEvent">Verwijder event</button>
           </div>
           <form class="event-create-form" id="eventCreateForm" hidden>
@@ -149,6 +188,8 @@
             </div>
           </form>
         </section>
+
+        <section class="closed-events-panel" id="closedEventsPanel"></section>
 
         <div class="event-layout">
           <form class="event-profile" id="eventProfileForm"></form>
@@ -209,6 +250,17 @@
             <form class="plan-form" id="planForm"></form>
             <div class="saved-actions" id="savedActions"></div>
           </section>
+
+          <section class="workspace-block runbook-preview-block">
+            <div class="section-heading compact">
+              <div>
+                <p class="eyebrow" data-i18n="runbookPreviewEyebrow">Preview</p>
+                <h2 data-i18n="runbookPreviewTitle">Bekijk je draaiboek</h2>
+                <p class="workspace-note" data-i18n="runbookPreviewText">Deze preview toont wat er ongeveer in je download komt. Lege onderdelen worden niet getoond.</p>
+              </div>
+            </div>
+            <div class="runbook-preview" id="runbookPreview"></div>
+          </section>
         </div>
       </section>
 
@@ -266,6 +318,6 @@
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="script.js?v=supabase-auth"></script>
+    <script src="script.js?v=event-archive-polish"></script>
   </body>
 </html>
