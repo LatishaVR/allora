@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Allora</title>
-    <link rel="stylesheet" href="styles.css?v=homepage-popups-2" />
+    <link rel="stylesheet" href="styles.css?v=full-editorial-style" />
   </head>
   <body>
     <header class="site-header">
@@ -38,11 +38,17 @@
           <div class="hero-copy">
             <h1>
               <span data-i18n="heroLineOne">Maak je event</span>
-              <span class="accent" data-i18n="heroLineTwo">toegankelijker, veiliger</span>
-              <span data-i18n="heroLineThree">en inclusiever.</span>
+              <span class="hero-word-row">
+                <span class="accent-word accent-accessible" data-i18n="heroWordAccessible">toegankelijker</span><span>, </span>
+                <span class="accent-word accent-safe" data-i18n="heroWordSafe">veiliger</span><span> en </span>
+                <span class="accent-word accent-inclusive" data-i18n="heroWordInclusive">inclusiever</span><span>.</span>
+              </span>
             </h1>
             <p class="lead" data-i18n="heroLead">Make every event feel welcoming.</p>
-            <p class="hero-text" data-i18n="heroText">Kies wat je nu nodig hebt: check je event, leer uit voorbeelden, oefen reacties of bouw meteen je plan.</p>
+            <p class="hero-text">
+              <strong data-i18n="heroTextLead">Geen ervaring nodig.</strong>
+              <span data-i18n="heroTextRest">Beantwoord enkele eenvoudige vragen, kies je prioriteiten en bouw stap voor stap een event dat duidelijker, veiliger en welkomer voelt.</span>
+            </p>
             <div class="hero-actions" id="heroActions"></div>
             <p class="hero-proof" data-i18n="heroProof">Snel duidelijk, meteen bruikbaar.</p>
           </div>
@@ -259,6 +265,7 @@
     </div>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
-    <script src="script.js?v=homepage-popups-2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js?v=supabase-auth"></script>
   </body>
 </html>

@@ -5,8 +5,13 @@ const copy = {
     heroLineOne: "Maak je event",
     heroLineTwo: "toegankelijker, veiliger",
     heroLineThree: "en inclusiever.",
+    heroWordAccessible: "toegankelijker",
+    heroWordSafe: "veiliger",
+    heroWordInclusive: "inclusiever",
     heroLead: "",
     heroText: "Geen ervaring nodig. Beantwoord enkele eenvoudige vragen, kies je prioriteiten en bouw stap voor stap een event dat duidelijker, veiliger en welkomer voelt.",
+    heroTextLead: "Geen ervaring nodig.",
+    heroTextRest: "Beantwoord enkele eenvoudige vragen, kies je prioriteiten en bouw stap voor stap een event dat duidelijker, veiliger en welkomer voelt.",
     heroProof: "Allora helpt je vooruit, zonder je event te beoordelen.",
     actionSectionTitle: "Waar wil je mee starten?",
     componentSectionTitle: "De 8 componenten van inclusief organiseren",
@@ -106,6 +111,8 @@ const copy = {
     accountPassword: "Wachtwoord",
     accountRequired: "Log in om je event te bewaren.",
     backendUnavailable: "Accounts werken pas wanneer de online database gekoppeld is.",
+    accountCreated: "Account aangemaakt. Bevestig eventueel je e-mail en log daarna in.",
+    accountSignedIn: "Je bent ingelogd.",
     addRow: "Rij toevoegen",
     removeRow: "Verwijder",
     more: "Meer info",
@@ -131,8 +138,13 @@ const copy = {
     heroLineOne: "Make your event",
     heroLineTwo: "more accessible, safer",
     heroLineThree: "and more inclusive.",
+    heroWordAccessible: "more accessible",
+    heroWordSafe: "safer",
+    heroWordInclusive: "more inclusive",
     heroLead: "",
     heroText: "No experience needed. Answer a few simple questions, choose your priorities and build an event that feels clearer, safer and more welcoming.",
+    heroTextLead: "No experience needed.",
+    heroTextRest: "Answer a few simple questions, choose your priorities and build an event that feels clearer, safer and more welcoming.",
     heroProof: "Allora helps you move forward without judging your event.",
     actionSectionTitle: "Where do you want to start?",
     componentSectionTitle: "The 8 components of inclusive organising",
@@ -232,6 +244,8 @@ const copy = {
     accountPassword: "Password",
     accountRequired: "Log in to save your event.",
     backendUnavailable: "Accounts will work once the online database is connected.",
+    accountCreated: "Account created. Confirm your email if needed, then log in.",
+    accountSignedIn: "You are logged in.",
     addRow: "Add row",
     removeRow: "Remove",
     more: "More info",
@@ -257,8 +271,13 @@ const copy = {
     heroLineOne: "Rendez votre event",
     heroLineTwo: "plus accessible, plus sur",
     heroLineThree: "et plus inclusif.",
+    heroWordAccessible: "plus accessible",
+    heroWordSafe: "plus sur",
+    heroWordInclusive: "plus inclusif",
     heroLead: "",
     heroText: "Aucune experience necessaire. Repondez a quelques questions simples, choisissez vos priorites et construisez un event plus clair, plus sur et plus accueillant.",
+    heroTextLead: "Aucune experience necessaire.",
+    heroTextRest: "Repondez a quelques questions simples, choisissez vos priorites et construisez un event plus clair, plus sur et plus accueillant.",
     heroProof: "Allora vous aide a avancer sans juger votre event.",
     actionSectionTitle: "Par ou commencer?",
     componentSectionTitle: "Les 8 composantes de l'organisation inclusive",
@@ -358,6 +377,8 @@ const copy = {
     accountPassword: "Mot de passe",
     accountRequired: "Connectez-vous pour enregistrer votre event.",
     backendUnavailable: "Les comptes fonctionneront quand la base de donnees en ligne sera connectee.",
+    accountCreated: "Compte cree. Confirmez votre e-mail si necessaire, puis connectez-vous.",
+    accountSignedIn: "Vous etes connecte.",
     addRow: "Ajouter une ligne",
     removeRow: "Supprimer",
     more: "Plus d'info",
@@ -378,6 +399,12 @@ const copy = {
     }
   }
 };
+
+const SUPABASE_URL = "https://vnrgettijmazhklnpmvc.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_aQNDJ6nkiHlHW7yMvUi1Cw_VT0YegPK";
+const supabaseClient = window.supabase
+  ? window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY)
+  : null;
 
 const content = {
   nl: {
@@ -744,6 +771,7 @@ if (!copy[currentLanguage]) currentLanguage = "nl";
 let currentUser = null;
 let appState = { events: [], selectedEventId: null };
 let backendAvailable = true;
+let supabaseWorkspaceEventId = null;
 let selectedThemeIndex = 0;
 let selectedCaseTheme = "all";
 let isCreatingEvent = false;
@@ -901,7 +929,92 @@ async function api(path, options = {}) {
   return data;
 }
 
+function normalizeSupabaseUser(user) {
+  if (!user) return null;
+  return {
+    id: user.id,
+    email: user.email || "",
+    name: user.user_metadata?.name || user.email?.split("@")[0] || "Allora gebruiker"
+  };
+}
+
+async function ensureSupabaseWorkspaceEvent(userId) {
+  if (supabaseWorkspaceEventId) return supabaseWorkspaceEventId;
+  const { data: existingEvents, error: selectError } = await supabaseClient
+    .from("events")
+    .select("id")
+    .eq("user_id", userId)
+    .eq("event_type", "allora_workspace")
+    .limit(1);
+  if (selectError) throw selectError;
+  if (existingEvents?.length) {
+    supabaseWorkspaceEventId = existingEvents[0].id;
+    return supabaseWorkspaceEventId;
+  }
+
+  const { data: createdEvent, error: insertError } = await supabaseClient
+    .from("events")
+    .insert({
+      user_id: userId,
+      name: "Allora workspace",
+      event_type: "allora_workspace"
+    })
+    .select("id")
+    .single();
+  if (insertError) throw insertError;
+  supabaseWorkspaceEventId = createdEvent.id;
+  return supabaseWorkspaceEventId;
+}
+
+async function loadSupabaseState(eventId) {
+  const { data: rows, error } = await supabaseClient
+    .from("event_state")
+    .select("data")
+    .eq("event_id", eventId)
+    .limit(1);
+  if (error) throw error;
+  return rows?.[0]?.data ? normalizeState(rows[0].data) : loadPreviewState();
+}
+
+async function saveSupabaseState() {
+  if (!currentUser) return;
+  const eventId = await ensureSupabaseWorkspaceEvent(currentUser.id);
+  const { error } = await supabaseClient
+    .from("event_state")
+    .upsert(
+      {
+        event_id: eventId,
+        data: appState
+      },
+      { onConflict: "event_id" }
+    );
+  if (error) throw error;
+}
+
 async function loadSession() {
+  if (supabaseClient) {
+    try {
+      backendAvailable = true;
+      const { data, error } = await supabaseClient.auth.getUser();
+      if (error) throw error;
+      currentUser = normalizeSupabaseUser(data.user);
+      if (!currentUser) {
+        supabaseWorkspaceEventId = null;
+        appState = loadPreviewState();
+        return;
+      }
+      const eventId = await ensureSupabaseWorkspaceEvent(currentUser.id);
+      appState = await loadSupabaseState(eventId);
+      return;
+    } catch (error) {
+      backendAvailable = false;
+      currentUser = null;
+      supabaseWorkspaceEventId = null;
+      appState = loadPreviewState();
+      return;
+    }
+  }
+
   try {
     const data = await api("/api/me");
     backendAvailable = true;
@@ -915,6 +1028,16 @@ async function loadSession() {
 }
 
 async function persistState() {
+  if (supabaseClient && backendAvailable) {
+    if (!currentUser) return;
+    try {
+      await saveSupabaseState();
+    } catch (error) {
+      showToast(error.message);
+    }
+    return;
+  }
+
   if (!backendAvailable) {
     savePreviewState();
     return;
@@ -2293,17 +2416,43 @@ authPanel.addEventListener("submit", async (event) => {
   const form = event.target.closest("[data-auth-form]");
   if (!form) return;
   event.preventDefault();
-  if (!backendAvailable) {
+  if (!supabaseClient && !backendAvailable) {
     showToast(t("backendUnavailable"));
     return;
   }
   const payload = Object.fromEntries(new FormData(form).entries());
-  const endpoint = form.dataset.authForm === "register" ? "/api/register" : "/api/login";
   try {
-    const data = await api(endpoint, {
-      method: "POST",
-      body: JSON.stringify(payload)
-    });
+    if (supabaseClient) {
+      backendAvailable = true;
+      const isRegistering = form.dataset.authForm === "register";
+      const authResponse = isRegistering
+        ? await supabaseClient.auth.signUp({
+            email: payload.email,
+            password: payload.password,
+            options: { data: { name: payload.name || "" } }
+          })
+        : await supabaseClient.auth.signInWithPassword({
+            email: payload.email,
+            password: payload.password
+          });
+      if (authResponse.error) throw authResponse.error;
+      if (!authResponse.data.session && isRegistering) {
+        showToast(t("accountCreated"));
+        return;
+      }
+      currentUser = normalizeSupabaseUser(authResponse.data.user);
+      if (currentUser) {
+        const eventId = await ensureSupabaseWorkspaceEvent(currentUser.id);
+        appState = await loadSupabaseState(eventId);
+        await saveSupabaseState();
+      }
+      renderAll();
+      showToast(t("accountSignedIn"));
+      return;
+    }
+
+    const endpoint = form.dataset.authForm === "register" ? "/api/register" : "/api/login";
+    const data = await api(endpoint, { method: "POST", body: JSON.stringify(payload) });
     currentUser = data.user;
     appState = normalizeState(data.state);
     renderAll();
@@ -2315,8 +2464,14 @@ authPanel.addEventListener("submit", async (event) => {
 authPanel.addEventListener("click", async (event) => {
   if (event.target.dataset.authAction !== "logout") return;
   try {
-    await api("/api/logout", { method: "POST", body: "{}" });
+    if (supabaseClient) {
+      const { error } = await supabaseClient.auth.signOut();
+      if (error) throw error;
+    } else {
+      await api("/api/logout", { method: "POST", body: "{}" });
+    }
     currentUser = null;
+    supabaseWorkspaceEventId = null;
     appState = emptyState();
     renderAll();
   } catch (error) {
