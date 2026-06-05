@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Allora</title>
+    <link rel="stylesheet" href="styles.css?v=event-type-dropdown" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Allora" data-open-tab="home">
+        <img class="brand-logo" src="allora-logo-klein-clean.png" alt="Allora" />
+      </a>
+
+      <nav class="top-nav" aria-label="Platform onderdelen">
+        <button class="nav-item" data-tab="event" data-i18n="tabEvent">Mijn evenement</button>
+        <button class="nav-item" data-tab="themes" data-i18n="tabThemes">Inclusiethema's</button>
+        <button class="nav-item" data-tab="cases" data-i18n="tabCases">Real life cases</button>
+      </nav>
+
+      <div class="header-actions">
+        <div class="language-switcher" aria-label="Taal kiezen">
+          <label class="sr-only" for="languageSelect">Taal kiezen</label>
+          <select id="languageSelect" class="language-select" aria-label="Taal kiezen">
+            <option value="nl">NL</option>
+            <option value="en">EN</option>
+            <option value="fr">FR</option>
+          </select>
+        </div>
+
+        <div class="auth-panel" id="authPanel"></div>
+      </div>
+    </header>
+
+    <main class="site-main">
+      <section id="home" class="tab-panel is-active">
+        <section class="home-hero">
+          <div class="hero-copy">
+            <h1>
+              <span data-i18n="heroLineOne">Maak je event</span>
+              <span class="accent" data-i18n="heroLineTwo">toegankelijker, veiliger</span>
+              <span data-i18n="heroLineThree">en inclusiever.</span>
+            </h1>
+            <p class="lead" data-i18n="heroLead">Make every event feel welcoming.</p>
+            <p class="hero-text" data-i18n="heroText">Kies wat je nu nodig hebt: check je event, leer uit voorbeelden, oefen reacties of bouw meteen je plan.</p>
+            <div class="hero-actions" id="heroActions"></div>
+            <p class="hero-proof" data-i18n="heroProof">Snel duidelijk, meteen bruikbaar.</p>
+          </div>
+
+          <aside class="visual-panel">
+            <div class="hero-visual" aria-hidden="true">
+              <img class="hero-logo-slogan" src="allora-logo-slogan.png" alt="" />
+            </div>
+          </aside>
+        </section>
+
+        <section class="home-lower">
+          <div class="action-section-heading">
+            <h2 data-i18n="actionSectionTitle">Werk verder zoals in de gids</h2>
+          </div>
+          <div class="quick-actions" id="actionList" aria-label="Acties"></div>
+
+          <div class="component-section">
+            <div class="action-section-heading">
+              <h2 data-i18n="componentSectionTitle">De 8 componenten van inclusief organiseren</h2>
+            </div>
+            <div class="component-grid" id="homeComponents"></div>
+          </div>
+        </section>
+      </section>
+
+      <section id="event" class="tab-panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow" data-i18n="eventEyebrow">Mijn evenement</p>
+            <h2 data-i18n="eventTitle">Bouw je draaiboek en inclusieplan</h2>
+          </div>
+          <div class="button-row">
+            <button class="primary-button" id="saveEventProfile" data-i18n="saveEvent">Bewaar event</button>
+            <button class="ghost-button" id="downloadRunbook" data-i18n="downloadRunbook">Download draaiboek</button>
+          </div>
+        </div>
+
+        <section class="event-switcher">
+          <div>
+            <p class="eyebrow" data-i18n="eventSwitcherEyebrow">Event kiezen</p>
+            <h3 data-i18n="eventSwitcherTitle">Werk aan één event tegelijk</h3>
+          </div>
+          <div class="event-switcher-controls">
+            <label class="sr-only" for="eventSelect" data-i18n="eventSelectLabel">Kies event</label>
+            <select id="eventSelect" aria-label="Kies event"></select>
+            <button class="ghost-button" type="button" id="createEvent" data-i18n="createEvent">Nieuw event</button>
+            <button class="ghost-button danger-button" type="button" id="deleteEvent" data-i18n="deleteEvent">Verwijder event</button>
+          </div>
+          <form class="event-create-form" id="eventCreateForm" hidden>
+            <label>
+              <span data-i18n="eventNameLabel">Naam event</span>
+              <input name="eventName" id="newEventNameInput" placeholder="Bijvoorbeeld: Samen aan tafel, Open atelier..." />
+            </label>
+            <div class="event-priority-start">
+              <div>
+                <strong data-i18n="eventPrioritiesTitle">Waar wil je vooraf op inzetten?</strong>
+                <p data-i18n="eventPrioritiesText">Kies optioneel een of meerdere prioriteiten. Je kan dit later nog aanpassen.</p>
+              </div>
+              <div class="event-priority-grid" id="eventPriorityChoices"></div>
+            </div>
+            <div class="button-row">
+              <button class="primary-button" type="submit" data-i18n="saveNewEvent">Event toevoegen</button>
+              <button class="ghost-button" type="button" id="cancelCreateEvent" data-i18n="cancel">Annuleer</button>
+            </div>
+          </form>
+        </section>
+
+        <div class="event-layout">
+          <form class="event-profile" id="eventProfileForm"></form>
+          <aside class="event-summary">
+            <span class="status-label" data-i18n="eventProgressLabel">Voortgang checklists</span>
+            <strong id="eventProgress">0%</strong>
+            <div class="progress-track" aria-hidden="true">
+              <span id="eventProgressBar"></span>
+            </div>
+            <div class="event-meta" id="eventMeta"></div>
+          </aside>
+        </div>
+
+        <div class="event-workspace">
+          <section class="workspace-block">
+            <div class="section-heading compact">
+              <div>
+                <p class="eyebrow">Startkeuzes</p>
+                <h2>Maak snel de juiste keuzes</h2>
+              </div>
+            </div>
+            <div class="organizer-tools" id="organizerTools"></div>
+          </section>
+
+          <section class="workspace-block">
+            <div class="section-heading compact">
+              <div>
+                <p class="eyebrow" data-i18n="toolkitEyebrow">Draaiboek</p>
+                <h2 data-i18n="toolkitTitle">Vul je draaiboek in</h2>
+                <p class="workspace-note" data-i18n="optionalDownloadNote">Vul alleen in wat relevant is voor jouw event. Lege onderdelen komen niet mee in je download.</p>
+              </div>
+            </div>
+            <form class="runbook-form" id="runbookForm"></form>
+          </section>
+
+          <section class="workspace-block">
+            <div class="section-heading compact">
+              <div>
+                <p class="eyebrow" data-i18n="checkEyebrow">Eventcheck</p>
+                <h2 data-i18n="checkTitle">Duid je checklist per thema aan</h2>
+              </div>
+              <div class="button-row">
+                <button class="ghost-button" id="downloadCheck" data-i18n="downloadChecklist">Download checklist</button>
+                <button class="ghost-button" id="resetCheck" data-i18n="resetCheck">Reset</button>
+              </div>
+            </div>
+            <div class="check-grid" id="checklist"></div>
+          </section>
+
+          <section class="workspace-block">
+            <div class="section-heading compact">
+              <div>
+                <p class="eyebrow" data-i18n="planEyebrow">Inclusieplan</p>
+                <h2 data-i18n="planTitle">Zet je inzichten om in acties</h2>
+              </div>
+              <button class="primary-button" id="copyPlan" data-i18n="copyPlan">Kopieer plan</button>
+            </div>
+            <form class="plan-form" id="planForm"></form>
+            <div class="saved-actions" id="savedActions"></div>
+          </section>
+        </div>
+      </section>
+
+      <section id="themes" class="tab-panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow" data-i18n="learnEyebrow">Inclusiethema's</p>
+            <h2 data-i18n="learnTitle">Klik een thema open en leer wat je kan toepassen</h2>
+          </div>
+        </div>
+        <div class="intro-grid theme-grid" id="learnList"></div>
+
+        <div class="theme-practice">
+          <div class="section-heading compact">
+            <div>
+              <p class="eyebrow" data-i18n="practiceEyebrow">Ongemakkelijke situaties</p>
+              <h2 data-i18n="practiceTitle">Oefen met situaties die kunnen schuren</h2>
+            </div>
+          </div>
+          <div class="scenario-layout">
+            <article class="scenario-card" id="scenarioCard"></article>
+            <aside class="method-card">
+              <h3 data-i18n="methodTitle">De 5 A's</h3>
+              <ul id="methodList"></ul>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section id="themePage" class="tab-panel">
+        <article class="theme-page" id="themePageContent"></article>
+      </section>
+
+      <section id="cases" class="tab-panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow" data-i18n="casesEyebrow">Inspiratiekaarten</p>
+            <h2 data-i18n="casesTitle">Real life cases uit events</h2>
+          </div>
+        </div>
+        <div class="case-filters" id="caseFilters" aria-label="Filter cases per thema"></div>
+        <div class="case-grid" id="caseList"></div>
+      </section>
+    </main>
+
+    <div class="advice-modal" id="eventTypeAdviceModal" hidden>
+      <div class="advice-modal-backdrop" data-close-advice></div>
+      <section class="advice-dialog" role="dialog" aria-modal="true" aria-labelledby="eventTypeAdviceTitle">
+        <button class="advice-close" type="button" data-close-advice aria-label="Sluiten">×</button>
+        <p class="eyebrow" data-i18n="eventTypeAdviceEyebrow">Eventvorm gekozen</p>
+        <h2 id="eventTypeAdviceTitle"></h2>
+        <div id="eventTypeAdviceContent"></div>
+      </section>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="script.js?v=event-type-dropdown"></script>
+  </body>
+</html>

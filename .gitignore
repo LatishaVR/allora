@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+*.pyo
+*.log
+server.err.log
+server.out.log
+open_event_kit.db
+.env
+.vercel/
