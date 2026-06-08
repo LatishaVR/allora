@@ -1242,7 +1242,7 @@ textarea:focus-visible {
 
 .guide-reader {
   overflow: hidden;
-  max-width: 940px;
+  max-width: min(100%, 920px);
   margin: 0 auto;
   border: 1px solid rgba(8, 42, 105, 0.16);
   border-radius: 18px;
@@ -1255,15 +1255,38 @@ textarea:focus-visible {
   gap: 14px;
   align-items: center;
   justify-content: space-between;
+  position: sticky;
+  top: 72px;
+  z-index: 5;
   min-height: 54px;
   padding: 12px 16px;
   border-bottom: 1px solid rgba(8, 42, 105, 0.12);
-  background: #fbfafc;
+  background: rgba(251, 250, 252, 0.94);
+  backdrop-filter: blur(14px);
+}
+
+.guide-page-controls {
+  display: inline-grid;
+  grid-template-columns: auto minmax(132px, auto) auto;
+  gap: 10px;
+  align-items: center;
+}
+
+.guide-page-controls .ghost-button {
+  min-height: 38px;
+  padding: 8px 12px;
+}
+
+.guide-page-controls .ghost-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.42;
+  transform: none;
 }
 
 .guide-reader-toolbar span {
   color: var(--blue-dark);
   font-weight: 950;
+  text-align: center;
 }
 
 .guide-reader-toolbar a {
@@ -1271,14 +1294,72 @@ textarea:focus-visible {
   font-weight: 900;
 }
 
-.guide-frame {
-  display: block;
-  width: min(100%, 820px);
-  height: min(82vh, 1120px);
-  min-height: 680px;
+.local-flipbook {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2px;
+  align-items: stretch;
+  max-width: 760px;
   margin: 0 auto;
-  border: 0;
+  padding: clamp(10px, 1.8vw, 18px);
+  background:
+    radial-gradient(circle at 50% 50%, rgba(8, 42, 105, 0.1), transparent 24rem),
+    #f7f3fb;
+}
+
+.flip-page {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
   background: #fff;
+  box-shadow: 0 14px 32px rgba(8, 42, 105, 0.14);
+}
+
+.flip-page-left {
+  border-radius: 12px 3px 3px 12px;
+}
+
+.flip-page-right {
+  border-radius: 3px 12px 12px 3px;
+}
+
+.flip-page img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.local-flipbook::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  bottom: 18px;
+  left: 50%;
+  width: 2px;
+  z-index: 2;
+  background: linear-gradient(180deg, transparent, rgba(8, 42, 105, 0.18), transparent);
+  transform: translateX(-50%);
+}
+
+.guide-reader-bottom {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  padding: 12px 16px 16px;
+  border-top: 1px solid rgba(8, 42, 105, 0.1);
+  background: rgba(251, 250, 252, 0.92);
+}
+
+.guide-reader-bottom .ghost-button,
+.guide-reader-bottom .primary-button {
+  min-width: 132px;
+}
+
+.guide-reader-bottom button:disabled {
+  cursor: not-allowed;
+  opacity: 0.42;
+  transform: none;
 }
 
 .guide-fallback {
@@ -1556,7 +1637,7 @@ textarea:focus-visible {
 .case-card-expanded {
   display: grid;
   grid-template-rows: auto auto 1fr auto;
-  gap: 10px;
+  gap: 14px;
 }
 
 .case-theme-list {
@@ -1564,7 +1645,28 @@ textarea:focus-visible {
   gap: 8px;
   flex-wrap: wrap;
   align-content: flex-start;
-  min-height: 108px;
+  min-height: 0;
+  margin-bottom: 12px;
+}
+
+.case-card-expanded h3 {
+  margin: 0 0 8px;
+  color: var(--blue-dark);
+  font-size: clamp(1.45rem, 2.1vw, 2.15rem);
+  line-height: 1.05;
+}
+
+.case-disclaimer {
+  max-width: 920px;
+  margin: -6px 0 20px;
+  padding: 12px 14px;
+  border: 1px solid rgba(8, 42, 105, 0.12);
+  border-radius: 10px;
+  color: #4e5b73;
+  background: rgba(255, 255, 255, 0.72);
+  font-size: 0.94rem;
+  font-weight: 750;
+  line-height: 1.45;
 }
 
 .event-workspace,
@@ -1716,6 +1818,7 @@ textarea:focus-visible {
 
 #event > .section-heading,
 #event > .event-switcher,
+#event > .runbook-preview-block,
 #event > .event-layout,
 #event > .event-workspace {
   width: min(100%, 1120px);
@@ -1725,21 +1828,25 @@ textarea:focus-visible {
 
 .event-switcher-controls {
   display: grid;
-  grid-template-columns: minmax(180px, 1fr) minmax(180px, 1fr) auto auto auto auto;
-  gap: 10px;
-  align-items: center;
-  width: min(100%, 920px);
+  grid-template-columns: minmax(180px, 1.1fr) minmax(190px, 1.2fr) repeat(4, minmax(126px, 0.72fr));
+  gap: 12px;
+  align-items: end;
+  width: 100%;
 }
 
-.event-switcher select {
+.event-switcher select,
+.event-name-editor input,
+.event-switcher-controls button {
   min-width: 0;
-  min-height: 42px;
+  width: 100%;
+  min-height: 52px;
   padding: 10px 12px;
   border: 1px solid var(--line);
   border-radius: 10px;
   color: var(--blue-dark);
   background: #fff;
-  font-weight: 850;
+  font-weight: 900;
+  line-height: 1.2;
 }
 
 .event-name-editor {
@@ -1752,16 +1859,13 @@ textarea:focus-visible {
   text-transform: uppercase;
 }
 
+.event-switcher-controls button {
+  margin: 0;
+  text-align: center;
+}
+
 .event-name-editor input {
-  width: 100%;
-  min-height: 42px;
-  padding: 10px 12px;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  color: var(--blue-dark);
-  background: #fff;
   font-size: 0.95rem;
-  font-weight: 850;
   text-transform: none;
 }
 
@@ -2437,7 +2541,11 @@ h3 {
 }
 
 .event-profile .event-profile-audience {
-  grid-column: auto;
+  grid-column: 1;
+}
+
+.event-profile .event-profile-nextStep {
+  grid-column: 2;
 }
 
 .plan-form input,
@@ -2456,6 +2564,11 @@ h3 {
 .runbook-form textarea {
   min-height: 92px;
   resize: vertical;
+}
+
+.event-profile .event-profile-audience textarea,
+.event-profile .event-profile-nextStep textarea {
+  min-height: 96px;
 }
 
 .runbook-form textarea {
@@ -2521,6 +2634,7 @@ h3 {
 }
 
 .runbook-preview-block {
+  margin: 0 auto 22px;
   background:
     radial-gradient(circle at 100% 0, rgba(120, 189, 176, 0.12), transparent 12rem),
     rgba(255, 255, 255, 0.72);
@@ -2533,7 +2647,9 @@ h3 {
 
 .runbook-document-preview {
   width: min(100%, 820px);
-  padding: clamp(20px, 4vw, 42px);
+  max-height: 540px;
+  overflow: auto;
+  padding: clamp(18px, 3vw, 32px);
   border: 1px solid rgba(8, 42, 105, 0.12);
   border-radius: 12px;
   color: #26324a;
@@ -2567,7 +2683,7 @@ h3 {
 }
 
 .runbook-document-preview section {
-  padding: 16px 0;
+  padding: 13px 0;
   border-bottom: 1px solid rgba(8, 42, 105, 0.08);
 }
 
@@ -2965,9 +3081,8 @@ h3 {
     min-height: 220px;
   }
 
-  .guide-frame {
-    height: 70vh;
-    min-height: 520px;
+  .local-flipbook {
+    max-width: 760px;
   }
 
   .event-switcher-controls {
@@ -3158,9 +3273,32 @@ h3 {
     flex-direction: column;
   }
 
-  .guide-frame {
-    height: 66vh;
-    min-height: 430px;
+  .guide-page-controls {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .local-flipbook {
+    grid-template-columns: 1fr;
+    padding: 14px;
+  }
+
+  .guide-reader-bottom {
+    flex-direction: column;
+  }
+
+  .guide-reader-bottom .ghost-button,
+  .guide-reader-bottom .primary-button {
+    width: 100%;
+  }
+
+  .local-flipbook::before {
+    display: none;
+  }
+
+  .flip-page-left,
+  .flip-page-right {
+    border-radius: 10px;
   }
 
   .runbook-document-preview dl {

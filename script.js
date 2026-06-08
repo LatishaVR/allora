@@ -33,6 +33,7 @@ const copy = {
     viewRelatedCases: "Bekijk cases rond dit thema",
     allCaseThemes: "Alle thema's",
     noCasesForTheme: "Voor dit thema is er nog geen uitgewerkte case. Kies een ander thema of gebruik dit als signaal om later een eigen voorbeeld toe te voegen.",
+    casesDisclaimer: "Allora gebruikt deze events als publieke inspiratievoorbeelden en is niet verbonden aan of officieel ondersteund door deze organisaties.",
     startCheck: "Start de check",
     viewCases: "Bekijk cases",
     progressLabel: "Eventcheck",
@@ -52,7 +53,10 @@ const copy = {
     openGuide: "Open in nieuw venster",
     downloadGuide: "Download handleiding",
     guideCoverLabel: "Inclusiegids",
-    guideReaderLabel: "Magazine preview",
+    guideReaderLabel: "Allora flipbook",
+    guidePageLabel: "Pagina",
+    previousGuidePage: "Vorige",
+    nextGuidePage: "Volgende",
     guideFallbackTitle: "De preview kan hier niet laden",
     guideFallbackText: "Open of download de handleiding om ze te lezen.",
     homeLabel: "Startpunt",
@@ -89,7 +93,7 @@ const copy = {
     closeEvent: "Sluit event af",
     eventClosed: "Event afgesloten en bewaard in je archief.",
     reopenEvent: "Heropen",
-    downloadArchivedRunbook: "Download draaiboek",
+    downloadArchivedRunbook: "Download bewerkbaar draaiboek",
     closedEventsTitle: "Afgesloten evenementen",
     closedEventsText: "Deze evenementen blijven gekoppeld aan je account. Je kan hun draaiboek opnieuw downloaden of een event heropenen.",
     noClosedEvents: "Nog geen afgesloten evenementen.",
@@ -117,7 +121,7 @@ const copy = {
     addToEvent: "Voeg toe aan mijn event",
     actionAdded: "Actie toegevoegd aan je event.",
     saveEvent: "Bewaar event",
-    downloadRunbook: "Download mijn draaiboek",
+    downloadRunbook: "Download bewerkbaar draaiboek",
     runbookPreviewEyebrow: "Preview",
     runbookPreviewTitle: "Bekijk je draaiboek",
     runbookPreviewText: "Deze preview toont wat er ongeveer in je download komt. Lege onderdelen worden niet getoond.",
@@ -199,6 +203,7 @@ const copy = {
     viewRelatedCases: "View cases for this theme",
     allCaseThemes: "All themes",
     noCasesForTheme: "There is no detailed case for this theme yet. Choose another theme or add your own example later.",
+    casesDisclaimer: "Allora uses these events as public inspiration examples and is not affiliated with or officially endorsed by these organisations.",
     startCheck: "Start event check",
     viewCases: "View examples",
     progressLabel: "Event check",
@@ -218,7 +223,10 @@ const copy = {
     openGuide: "Open in new window",
     downloadGuide: "Download guide",
     guideCoverLabel: "Inclusion guide",
-    guideReaderLabel: "Magazine preview",
+    guideReaderLabel: "Allora flipbook",
+    guidePageLabel: "Page",
+    previousGuidePage: "Previous",
+    nextGuidePage: "Next",
     guideFallbackTitle: "The preview cannot load here",
     guideFallbackText: "Open or download the guide to read it.",
     homeLabel: "Starting point",
@@ -255,7 +263,7 @@ const copy = {
     closeEvent: "Close event",
     eventClosed: "Event closed and saved in your archive.",
     reopenEvent: "Reopen",
-    downloadArchivedRunbook: "Download runbook",
+    downloadArchivedRunbook: "Download editable runbook",
     closedEventsTitle: "Closed events",
     closedEventsText: "These events stay linked to your account. You can download their runbook again or reopen an event.",
     noClosedEvents: "No closed events yet.",
@@ -283,7 +291,7 @@ const copy = {
     addToEvent: "Add to my event",
     actionAdded: "Action added to your event.",
     saveEvent: "Save profile",
-    downloadRunbook: "Download my runbook",
+    downloadRunbook: "Download editable runbook",
     runbookPreviewEyebrow: "Preview",
     runbookPreviewTitle: "Preview your runbook",
     runbookPreviewText: "This preview shows what will roughly appear in your download. Empty parts are not shown.",
@@ -365,6 +373,7 @@ const copy = {
     viewRelatedCases: "Voir les cas de ce theme",
     allCaseThemes: "Tous les themes",
     noCasesForTheme: "Il n'y a pas encore de cas detaille pour ce theme. Choisissez un autre theme ou ajoutez votre propre exemple plus tard.",
+    casesDisclaimer: "Allora utilise ces events comme exemples publics d'inspiration et n'est pas lie ni officiellement soutenu par ces organisations.",
     startCheck: "Lancer le check",
     viewCases: "Voir des exemples",
     progressLabel: "Check event",
@@ -384,7 +393,10 @@ const copy = {
     openGuide: "Ouvrir dans une nouvelle fenetre",
     downloadGuide: "Telecharger le guide",
     guideCoverLabel: "Guide inclusion",
-    guideReaderLabel: "Preview magazine",
+    guideReaderLabel: "Flipbook Allora",
+    guidePageLabel: "Page",
+    previousGuidePage: "Precedent",
+    nextGuidePage: "Suivant",
     guideFallbackTitle: "La preview ne peut pas se charger ici",
     guideFallbackText: "Ouvrez ou telechargez le guide pour le lire.",
     homeLabel: "Point de depart",
@@ -421,7 +433,7 @@ const copy = {
     closeEvent: "Cloturer event",
     eventClosed: "Event cloture et garde dans vos archives.",
     reopenEvent: "Rouvrir",
-    downloadArchivedRunbook: "Telecharger le deroule",
+    downloadArchivedRunbook: "Telecharger le deroule modifiable",
     closedEventsTitle: "Events clotures",
     closedEventsText: "Ces events restent lies a votre compte. Vous pouvez retelecharger leur deroule ou rouvrir un event.",
     noClosedEvents: "Aucun event cloture pour le moment.",
@@ -449,7 +461,7 @@ const copy = {
     addToEvent: "Ajouter a mon event",
     actionAdded: "Action ajoutee a votre event.",
     saveEvent: "Enregistrer le profil",
-    downloadRunbook: "Telecharger mon deroule",
+    downloadRunbook: "Telecharger le deroule modifiable",
     runbookPreviewEyebrow: "Preview",
     runbookPreviewTitle: "Voir votre deroule",
     runbookPreviewText: "Cette preview montre ce qui apparaitra environ dans votre telechargement. Les parties vides ne sont pas affichees.",
@@ -871,6 +883,12 @@ const languageSelect = document.querySelector("#languageSelect");
 const eventTypeAdviceModal = document.querySelector("#eventTypeAdviceModal");
 const eventTypeAdviceTitle = document.querySelector("#eventTypeAdviceTitle");
 const eventTypeAdviceContent = document.querySelector("#eventTypeAdviceContent");
+const guideFlipbook = document.querySelector("#guideFlipbook");
+const guidePageIndicator = document.querySelector("#guidePageIndicator");
+const prevGuidePageButton = document.querySelector("#prevGuidePage");
+const nextGuidePageButton = document.querySelector("#nextGuidePage");
+const prevGuidePageBottomButton = document.querySelector("#prevGuidePageBottom");
+const nextGuidePageBottomButton = document.querySelector("#nextGuidePageBottom");
 let currentScenario = 0;
 let currentLanguage = localStorage.getItem("openEventKitLanguage") || "nl";
 if (!copy[currentLanguage]) currentLanguage = "nl";
@@ -882,6 +900,8 @@ let selectedThemeIndex = 0;
 let selectedCaseTheme = "all";
 let isCreatingEvent = false;
 let draftPriorityKeys = [];
+let currentGuidePage = 1;
+const GUIDE_PAGE_COUNT = 36;
 const PREVIEW_STATE_KEY = "alloraPreviewState";
 
 function emptyState() {
@@ -1500,6 +1520,38 @@ function renderStaticText() {
     button.classList.toggle("is-active", button.dataset.language === currentLanguage);
   });
   if (languageSelect) languageSelect.value = currentLanguage;
+}
+
+function guidePageSrc(page) {
+  return `guide-pages/page-${String(page).padStart(2, "0")}.jpg`;
+}
+
+function renderGuideReader() {
+  if (!guideFlipbook || !guidePageIndicator) return;
+  currentGuidePage = Math.min(Math.max(currentGuidePage, 1), GUIDE_PAGE_COUNT);
+  if (currentGuidePage % 2 === 0) currentGuidePage -= 1;
+  const nextPage = currentGuidePage + 1;
+  guidePageIndicator.textContent = nextPage <= GUIDE_PAGE_COUNT
+    ? `${t("guidePageLabel")} ${currentGuidePage}-${nextPage} / ${GUIDE_PAGE_COUNT}`
+    : `${t("guidePageLabel")} ${currentGuidePage} / ${GUIDE_PAGE_COUNT}`;
+  const isFirstSpread = currentGuidePage <= 1;
+  const isLastSpread = nextPage >= GUIDE_PAGE_COUNT;
+  [prevGuidePageButton, prevGuidePageBottomButton].forEach((button) => {
+    if (button) button.disabled = isFirstSpread;
+  });
+  [nextGuidePageButton, nextGuidePageBottomButton].forEach((button) => {
+    if (button) button.disabled = isLastSpread;
+  });
+  guideFlipbook.innerHTML = `
+    <figure class="flip-page flip-page-left">
+      <img src="${guidePageSrc(currentGuidePage)}" alt="${t("guidePageLabel")} ${currentGuidePage}" loading="eager" />
+    </figure>
+    ${nextPage <= GUIDE_PAGE_COUNT ? `
+      <figure class="flip-page flip-page-right">
+        <img src="${guidePageSrc(nextPage)}" alt="${t("guidePageLabel")} ${nextPage}" loading="eager" />
+      </figure>
+    ` : ""}
+  `;
 }
 
 function themeActionsFor(index) {
@@ -2757,6 +2809,7 @@ function renderAll() {
   renderHomeComponents();
   renderLearn();
   renderThemePage();
+  renderGuideReader();
   renderChecklist();
   renderCases();
   renderOrganizerTools();
@@ -2807,6 +2860,34 @@ if (languageSelect) {
     currentLanguage = languageSelect.value;
     localStorage.setItem("openEventKitLanguage", currentLanguage);
     renderAll();
+  });
+}
+
+if (prevGuidePageButton) {
+  prevGuidePageButton.addEventListener("click", () => {
+    currentGuidePage = Math.max(1, currentGuidePage - 2);
+    renderGuideReader();
+  });
+}
+
+if (nextGuidePageButton) {
+  nextGuidePageButton.addEventListener("click", () => {
+    currentGuidePage = Math.min(GUIDE_PAGE_COUNT, currentGuidePage + 2);
+    renderGuideReader();
+  });
+}
+
+if (prevGuidePageBottomButton) {
+  prevGuidePageBottomButton.addEventListener("click", () => {
+    currentGuidePage = Math.max(1, currentGuidePage - 2);
+    renderGuideReader();
+  });
+}
+
+if (nextGuidePageBottomButton) {
+  nextGuidePageBottomButton.addEventListener("click", () => {
+    currentGuidePage = Math.min(GUIDE_PAGE_COUNT, currentGuidePage + 2);
+    renderGuideReader();
   });
 }
 
@@ -3130,7 +3211,7 @@ document.addEventListener("click", async (event) => {
   if (downloadClosedTarget) {
     const archivedEvent = appState.events.find((item) => item.id === downloadClosedTarget.dataset.downloadClosedEvent);
     if (!archivedEvent) return;
-    downloadFile(`${safeFilename(eventDisplayName(archivedEvent))} - Allora draaiboek.doc`, runbookDocumentFromEvent(archivedEvent), "application/msword;charset=utf-8");
+    downloadFile(`${safeFilename(eventDisplayName(archivedEvent))} - Allora bewerkbaar draaiboek.doc`, runbookDocumentFromEvent(archivedEvent), "application/msword;charset=utf-8");
     return;
   }
 
@@ -3222,7 +3303,7 @@ document.querySelector("#downloadRunbook").addEventListener("click", () => {
   savePlan();
   saveEventProfile();
   saveRunbook();
-  downloadFile("Allora draaiboek.doc", runbookDocument(), "application/msword;charset=utf-8");
+  downloadFile(`${safeFilename(eventDisplayName(currentEvent()))} - Allora bewerkbaar draaiboek.doc`, runbookDocument(), "application/msword;charset=utf-8");
 });
 
 planForm.addEventListener("input", savePlan);

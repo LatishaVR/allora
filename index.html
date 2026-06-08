@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Allora</title>
-    <link rel="stylesheet" href="styles.css?v=event-archive-polish" />
+    <link rel="stylesheet" href="styles.css?v=guide-reader-polish" />
   </head>
   <body>
     <header class="site-header">
@@ -128,16 +128,18 @@
 
         <div class="guide-reader">
           <div class="guide-reader-toolbar">
-            <span data-i18n="guideReaderLabel">Magazine preview</span>
+            <div class="guide-page-controls">
+              <button class="ghost-button" type="button" id="prevGuidePage" data-i18n="previousGuidePage">Vorige</button>
+              <span id="guidePageIndicator" data-i18n="guideReaderLabel">Allora flipbook</span>
+              <button class="ghost-button" type="button" id="nextGuidePage" data-i18n="nextGuidePage">Volgende</button>
+            </div>
             <a href="Allora-Inclusiegids.pdf" download data-i18n="downloadGuide">Download handleiding</a>
           </div>
-          <object class="guide-frame" data="Allora-Inclusiegids.pdf#toolbar=0&navpanes=0&view=FitH" type="application/pdf">
-            <div class="guide-fallback">
-              <h3 data-i18n="guideFallbackTitle">De preview kan hier niet laden</h3>
-              <p data-i18n="guideFallbackText">Open of download de handleiding om ze te lezen.</p>
-              <a class="primary-button" href="Allora-Inclusiegids.pdf" target="_blank" rel="noopener" data-i18n="openGuide">Open in nieuw venster</a>
-            </div>
-          </object>
+          <div class="local-flipbook" id="guideFlipbook" aria-live="polite"></div>
+          <div class="guide-reader-bottom">
+            <button class="ghost-button" type="button" id="prevGuidePageBottom" data-i18n="previousGuidePage">Vorige</button>
+            <button class="primary-button" type="button" id="nextGuidePageBottom" data-i18n="nextGuidePage">Volgende</button>
+          </div>
         </div>
       </section>
 
@@ -190,6 +192,17 @@
         </section>
 
         <section class="closed-events-panel" id="closedEventsPanel"></section>
+
+        <section class="workspace-block runbook-preview-block">
+          <div class="section-heading compact">
+            <div>
+              <p class="eyebrow" data-i18n="runbookPreviewEyebrow">Preview</p>
+              <h2 data-i18n="runbookPreviewTitle">Bekijk je draaiboek</h2>
+              <p class="workspace-note" data-i18n="runbookPreviewText">Deze preview toont wat er ongeveer in je download komt. Lege onderdelen worden niet getoond.</p>
+            </div>
+          </div>
+          <div class="runbook-preview" id="runbookPreview"></div>
+        </section>
 
         <div class="event-layout">
           <form class="event-profile" id="eventProfileForm"></form>
@@ -250,17 +263,6 @@
             <form class="plan-form" id="planForm"></form>
             <div class="saved-actions" id="savedActions"></div>
           </section>
-
-          <section class="workspace-block runbook-preview-block">
-            <div class="section-heading compact">
-              <div>
-                <p class="eyebrow" data-i18n="runbookPreviewEyebrow">Preview</p>
-                <h2 data-i18n="runbookPreviewTitle">Bekijk je draaiboek</h2>
-                <p class="workspace-note" data-i18n="runbookPreviewText">Deze preview toont wat er ongeveer in je download komt. Lege onderdelen worden niet getoond.</p>
-              </div>
-            </div>
-            <div class="runbook-preview" id="runbookPreview"></div>
-          </section>
         </div>
       </section>
 
@@ -302,6 +304,7 @@
           </div>
         </div>
         <div class="case-filters" id="caseFilters" aria-label="Filter cases per thema"></div>
+        <p class="case-disclaimer" data-i18n="casesDisclaimer">Allora gebruikt deze events als publieke inspiratievoorbeelden en is niet verbonden aan of officieel ondersteund door deze organisaties.</p>
         <div class="case-grid" id="caseList"></div>
       </section>
     </main>
@@ -318,6 +321,6 @@
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="script.js?v=event-archive-polish"></script>
+    <script src="script.js?v=guide-reader-polish"></script>
   </body>
 </html>
