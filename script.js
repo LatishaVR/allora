@@ -37,7 +37,7 @@ const copy = {
     startCheck: "Start de check",
     viewCases: "Bekijk cases",
     progressLabel: "Eventcheck",
-    progressText: "Bewaar je vooruitgang in je account.",
+    progressText: "Je vooruitgang wordt tijdelijk in deze browser bewaard.",
     tabHome: "Home",
     tabCheck: "Check",
     tabCases: "Real life cases",
@@ -147,6 +147,7 @@ const copy = {
     duplicateName: "Deze naam bestaat al. Kies een andere naam.",
     accountEventGateTitle: "Log in om je event te bewaren",
     accountEventGateText: "Je draaiboek, checklists en acties worden gekoppeld aan je account. Zo kan je later verder werken aan hetzelfde event.",
+    testModeLabel: "Testmodus zonder account",
     focusThemesTitle: "Welke inclusiethema's wil je aanpakken?",
     focusThemesText: "Kies een of meerdere thema's. Allora toont daarna vooral de checks en acties die daarbij horen.",
     focusThemesEmpty: "Kies eerst een of meerdere inclusiethema's om gerichte checklists te zien.",
@@ -207,7 +208,7 @@ const copy = {
     startCheck: "Start event check",
     viewCases: "View examples",
     progressLabel: "Event check",
-    progressText: "Your progress is saved in your account.",
+    progressText: "Your progress is temporarily saved in this browser.",
     tabHome: "Home",
     tabCheck: "Check",
     tabCases: "Real life cases",
@@ -317,6 +318,7 @@ const copy = {
     duplicateName: "This name already exists. Choose another name.",
     accountEventGateTitle: "Log in to save your event",
     accountEventGateText: "Your runbook, checklists and actions are linked to your account, so you can continue later.",
+    testModeLabel: "Test mode without account",
     focusThemesTitle: "Which inclusion themes do you want to focus on?",
     focusThemesText: "Choose one or more themes. Allora will then show the checks and actions that match your focus.",
     focusThemesEmpty: "Choose one or more inclusion themes first to see focused checklists.",
@@ -487,6 +489,7 @@ const copy = {
     duplicateName: "Ce nom existe deja. Choisissez un autre nom.",
     accountEventGateTitle: "Connectez-vous pour enregistrer votre event",
     accountEventGateText: "Votre deroule, vos checklists et vos actions sont lies a votre compte pour continuer plus tard.",
+    testModeLabel: "Mode test sans compte",
     focusThemesTitle: "Quels themes d'inclusion voulez-vous travailler?",
     focusThemesText: "Choisissez un ou plusieurs themes. Allora montre ensuite surtout les checks et actions liees a votre focus.",
     focusThemesEmpty: "Choisissez d'abord un ou plusieurs themes d'inclusion pour voir des checklists ciblees.",
@@ -513,6 +516,7 @@ const copy = {
 
 const SUPABASE_URL = "https://vnrgettijmazhklnpmvc.supabase.co";
 const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_aQNDJ6nkiHlHW7yMvUi1Cw_VT0YegPK";
+const TEST_MODE = true;
 const supabaseClient = window.supabase
   ? window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY)
   : null;
@@ -1153,6 +1157,19 @@ async function saveSupabaseState() {
 }
 
 async function loadSession() {
+  if (TEST_MODE) {
+    backendAvailable = false;
+    supabaseWorkspaceEventId = null;
+    currentUser = {
+      id: "allora-test-user",
+      name: "Testgebruiker",
+      email: "test@allora.local",
+      isTestUser: true
+    };
+    appState = loadPreviewState();
+    return;
+  }
+
   if (supabaseClient) {
     try {
       backendAvailable = true;
@@ -1189,6 +1206,11 @@ async function loadSession() {
 }
 
 async function persistState() {
+  if (TEST_MODE) {
+    savePreviewState();
+    return;
+  }
+
   if (supabaseClient && backendAvailable) {
     if (!currentUser) return;
     try {
@@ -1217,6 +1239,11 @@ async function persistState() {
 }
 
 function renderAuthPanel() {
+  if (TEST_MODE) {
+    authPanel.innerHTML = `<div class="account-chip test-mode-chip"><span>${t("testModeLabel")}</span></div>`;
+    return;
+  }
+
   if (currentUser) {
     authPanel.innerHTML = `
       <details class="auth-box account-menu">
